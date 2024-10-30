@@ -48,6 +48,43 @@ class CustomerController extends ResourceController
         }
     }
 
+    public function fetchCustomerNameList()
+    {
+        $customerModel = new CustomerModel();
+
+        try {
+            $customerArr = [];
+            $allCustomer = $customerModel->findAll();
+
+            foreach ($allCustomer as $customer) {
+                $obj = [];
+                $obj['c_fullname'] = $customer['c_fullname'];
+                $obj['c_id'] = $customer['c_id'];
+                $customerArr[] = $obj;
+            }
+
+            if ($allCustomer) {
+                return $this->response->setJSON([
+                    "status" => "success",
+                    "message" => count($allCustomer) . ' Customer found',
+                    "data" => $customerArr,
+                ]);
+            } else {
+                return $this->response->setJSON([
+                    'status' => 'error',
+                    'data' => null,
+                    'message' => 'Customer not found',
+                ]);
+            }
+        } catch (\Throwable $th) {
+            return $this->response->setJSON([
+                'status' => 'error',
+                'message' => $th->getTrace(),
+                'data' => null
+            ]);
+        }
+    }
+
     public function creatCustomer()
     {
         $customerModel = new CustomerModel();
@@ -99,14 +136,16 @@ class CustomerController extends ResourceController
 
         // ------------------------------------ PROFILE IMAGE UPLOAD CODE -------------------- END ------------>
 
+        $c_password = $this->request->getVar("c_password") ?? "Advance123";
+
         $data = [
             "c_fullname" => $this->request->getVar("c_fullname") ?? "",
+            "c_password" => hash('sha256', $c_password),
             "c_company_name" => $this->request->getVar("c_company_name") ?? "",
             "c_email" => $this->request->getVar("c_email") ?? "",
             "c_mobile" => $this->request->getVar("c_mobile") ?? "",
             "c_post" => $this->request->getVar("c_post") ?? "",
             "c_department" => $this->request->getVar("c_department") ?? "",
-            "c_password" => $this->request->getVar("c_password") ?? "",
             "c_status" => $this->request->getVar("c_status") ?? "",
             "c_gender" => $this->request->getVar("c_gender") ?? "",
             "c_description" => $this->request->getVar("c_description") ?? "",
@@ -139,57 +178,61 @@ class CustomerController extends ResourceController
         }
     }
 
-    // public function updateInterview()
-    // {
-    //     $interviewModel = new InterviewModel();
+    public function updateCustomer()
+    {
+        // $isToken = check_jwt_authentication();
 
-    //     $isToken = check_jwt_authentication();
+        // if (!$isToken) {
+        //     return $this->response->setJSON([
+        //         "status" => "error",
+        //         "message" => "Authentication failed"
+        //     ]);
+        // }
 
-    //     if (!$isToken) {
-    //         return $this->response->setJSON([
-    //             "status" => "error",
-    //             "message" => "Authentication failed"
-    //         ]);
-    //     }
+        $customerModel = new CustomerModel();
 
-    //     $data = [
-    //         "iv_name" => $this->request->getVar("iv_name") ?? "",
-    //         "iv_mobile" => $this->request->getVar("iv_mobile") ?? "",
-    //         "iv_profile" => $this->request->getVar("iv_profile") ?? "",
-    //         "iv_sch_date" => $this->request->getVar("iv_sch_date") ?? "",
-    //         "iv_sch_time" => $this->request->getVar("iv_sch_time") ?? "",
-    //         "iv_ref" => $this->request->getVar("iv_ref") ?? "",
-    //         "iv_status" => $this->request->getVar("iv_status") ?? "",
-    //         "iv_remark" => $this->request->getVar("iv_remark") ?? "",
-    //         "iv_last_ctc" => $this->request->getVar("iv_last_ctc") ?? "",
-    //         "iv_expectation" => $this->request->getVar("iv_expectation") ?? "",
-    //         "iv_city" => $this->request->getVar("iv_city") ?? "",
-    //         "iv_state" => $this->request->getVar("iv_state") ?? "",
-    //     ];
+        $c_password = $this->request->getVar("c_password") ?? "Advance123";
 
-    //     $interviewId = $this->request->getGet("id");
+        $data = [
+            "c_fullname" => $this->request->getVar("c_fullname") ?? "",
+            "c_password" => hash('sha256', $c_password),
+            "c_company_name" => $this->request->getVar("c_company_name") ?? "",
+            "c_email" => $this->request->getVar("c_email") ?? "",
+            "c_mobile" => $this->request->getVar("c_mobile") ?? "",
+            "c_post" => $this->request->getVar("c_post") ?? "",
+            "c_department" => $this->request->getVar("c_department") ?? "",
+            "c_status" => $this->request->getVar("c_status") ?? "",
+            "c_gender" => $this->request->getVar("c_gender") ?? "",
+            "c_description" => $this->request->getVar("c_description") ?? "",
+            "c_dob" => $this->request->getVar("c_dob") ?? "",
+            "c_address" => $this->request->getVar("c_address") ?? "",
+            "c_rank" => $this->request->getVar("c_rank") ?? "",
+            "c_no_of_quotation" => $this->request->getVar("c_no_of_quotation") ?? "",
+        ];
 
-    //     try {
+        $customerId = $this->request->getGet("id");
 
-    //         $interviewModel->update($interviewId, $data);
-    //         $updateInterview = $interviewModel->where("iv_id", $interviewId)->first();
-    //         if ($updateInterview) {
-    //             return $this->response->setJSON([
-    //                 "status" => "success",
-    //                 "message" => "Interviewer updated",
-    //                 "data" =>  $updateInterview
-    //             ]);
-    //         } else {
-    //             return $this->response->setJSON([
-    //                 "status" => "error",
-    //                 "message" => "Interviewer not update"
-    //             ]);
-    //         }
-    //     } catch (\Throwable $th) {
-    //         return $this->response->setJSON([
-    //             "status" => "error",
-    //             "message" => $th->getMessage() . " " . $th->getLine()
-    //         ]);
-    //     }
-    // }
+        try {
+
+            $customerModel->update($customerId, $data);
+            $updateCustomer = $customerModel->where("c_id", $customerId)->first();
+            if ($updateCustomer) {
+                return $this->response->setJSON([
+                    "status" => "success",
+                    "message" => "Customer updated",
+                    "data" => $updateCustomer
+                ]);
+            } else {
+                return $this->response->setJSON([
+                    "status" => "error",
+                    "message" => "Customer not update"
+                ]);
+            }
+        } catch (\Throwable $th) {
+            return $this->response->setJSON([
+                "status" => "error",
+                "message" => $th->getMessage() . " " . $th->getLine()
+            ]);
+        }
+    }
 }
