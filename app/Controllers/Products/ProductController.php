@@ -25,11 +25,21 @@ class ProductController extends ResourceController
             $countProduct = $ProductModel->like("p_name", $search)->orLike("p_unique_id", $search)->countAllResults();
 
 
+            $newProductArray = [];
+            foreach ($allProduct as $product) {
+
+                if ($product["p_media"]) {
+                    $decodedProductImage = json_decode($product['p_media'], true);
+                    $product['p_image'] = "https://api.advanceengineerings.com/" . $decodedProductImage[0];
+                    $newProductArray[] = $product;
+                }
+            }
+
             if ($allProduct) {
                 return $this->response->setJSON([
-                    "status" => "success",
-                    "message" => count($allProduct) . ' Product found',
-                    "data" => $allProduct,
+                    "status" => true,
+                    "message" => count($newProductArray) . ' Product found',
+                    "data" => $newProductArray,
                     "count" => $countProduct
                 ]);
             } else {
@@ -48,80 +58,113 @@ class ProductController extends ResourceController
         }
     }
 
-    // public function fetchCustomerNameList()
-    // {
-    //     $ProductModel = new ProductModel();
+    public function singleProduct()
+    {
 
-    //     try {
-    //         $customerArr = [];
-    //         $allProduct = $ProductModel->findAll();
+        $ProductModel = new ProductModel();
 
-    //         foreach ($allProduct as $customer) {
-    //             $obj = [];
-    //             $obj['p_name'] = $customer['p_name'];
-    //             $obj['p_id'] = $customer['p_id'];
-    //             $customerArr[] = $obj;
-    //         }
+        $id = $this->request->getGet('id');
+        try {
 
-    //         if ($allProduct) {
-    //             return $this->response->setJSON([
-    //                 "status" => "success",
-    //                 "message" => count($allProduct) . ' Customer found',
-    //                 "data" => $customerArr,
-    //             ]);
-    //         } else {
-    //             return $this->response->setJSON([
-    //                 'status' => 'error',
-    //                 'data' => null,
-    //                 'message' => 'Customer not found',
-    //             ]);
-    //         }
-    //     } catch (\Throwable $th) {
-    //         return $this->response->setJSON([
-    //             'status' => 'error',
-    //             'message' => $th->getTrace(),
-    //             'data' => null
-    //         ]);
-    //     }
-    // }
+            // -------------------- EMPLOYEES NAME LIST --------------------->
+
+
+            $productDetail = $ProductModel->where('p_id', $id)->first();
+
+
+            if ($productDetail) {
+
+                // if($productDetail['p_media']){
+
+                //  $decodeMedia = json_decode($productDetail['p_media']);
+                //   foreach($decodeMedia as $media){
+                //     $productDetail['p_media'][] = "https://api.advanceengineerings.com/" .  $media;
+                //   }
+                // }
+
+                if ($productDetail["p_media"]) {
+                    $decodedProductImage = json_decode($productDetail['p_media'], true);
+                    foreach ($decodedProductImage as $media) {
+                        $productDetail['p_medias'][] = "https://api.advanceengineerings.com/" . $media;
+                    }
+                }
+                $relatedProducts = $ProductModel->where('p_category', $productDetail['p_category'])->findAll(5, 0);
+                if (!$relatedProducts) {
+                    $relatedProducts = $ProductModel->findAll(5, 0);
+                }
+
+                $newRelatedProductArray = [];
+                foreach ($relatedProducts as $product) {
+
+                    if ($product["p_media"]) {
+                        $decodedProductImage = json_decode($product['p_media'], true);
+                        $product['p_image'] = "https://api.advanceengineerings.com/" . $decodedProductImage[0];
+                        $newRelatedProductArray[] = $product;
+                    }
+                }
+
+                return $this->response->setJSON([
+                    "status" => true,
+                    "message" => 'Product Details Found',
+                    "data" => $productDetail,
+                    "relatedProduct" => $newRelatedProductArray ?? [],
+                ]);
+
+            } else {
+                return $this->response->setJSON([
+                    "status" => false,
+                    "message" => 'Product not found in database',
+                    "data" => [],
+                    "relatedProduct" => [],
+                ]);
+
+            }
+        } catch (\Throwable $th) {
+            return $this->response->setJSON([
+                'status' => false,
+                'message' => $th->getMessage() . " " . $th->getLine(),
+                'data' => null
+            ]);
+        }
+    }
 
     public function creatProduct()
     {
         $ProductModel = new ProductModel();
         // return $this->response->setJSON([
-        //     "status" => "success",
+        //     "status" => true,
         //     "message" => "Product uploaded successfully",
-           
+
         // ]);
-   // --------------------------- THIS CODE FOR WHEN UPLOAD MULTIPLE IMAGE ------------- START --------------> 
-   $uploadPath = FCPATH . 'public/assets/img/product/';
-   $uploadedFiles = [];
-   if ($this->request->getVar('p_media') && is_string($this->request->getVar('p_media'))) {
-       $productPic = $this->request->getVar('p_media');
-   } else if ($this->request->getFileMultiple('p_media')) {
-       foreach ($this->request->getFileMultiple('p_media') as $imageFile) {
-           if ($imageFile->isValid() && !$imageFile->hasMoved()) {
-               $newName = $imageFile->getRandomName();
-               $imageFile->move($uploadPath, $newName);
-            //    $uploadedFiles[] = 'https://domain url/public/assets/img/uploads/documents/' . $newName;
-               $uploadedFiles[] = 'public/assets/img/product/' . $newName;
-           } else {
-               return $this->response->setJSON([
-                   'status' => false,
-                   'message' => 'Failed to upload one or more images.'
-               ]);
-           }
-       }
-       // If all files are uploaded successfully
-       $productPic = json_encode($uploadedFiles);
-   }
+        // --------------------------- THIS CODE FOR WHEN UPLOAD MULTIPLE IMAGE ------------- START --------------> 
+        $uploadPath = FCPATH . 'public/assets/img/product/';
+        $uploadedFiles = [];
+        if ($this->request->getVar('p_media') && is_string($this->request->getVar('p_media'))) {
+            $productPic = $this->request->getVar('p_media');
+        } else if ($this->request->getFileMultiple('p_media')) {
+            foreach ($this->request->getFileMultiple('p_media') as $imageFile) {
+                if ($imageFile->isValid() && !$imageFile->hasMoved()) {
+                    $newName = $imageFile->getRandomName();
+                    $imageFile->move($uploadPath, $newName);
+                    //    $uploadedFiles[] = 'https://domain url/public/assets/img/uploads/documents/' . $newName;
+                    $uploadedFiles[] = 'public/assets/img/product/' . $newName;
+                } else {
+                    return $this->response->setJSON([
+                        'status' => false,
+                        'message' => 'Failed to upload one or more images.'
+                    ]);
+                }
+            }
+            // If all files are uploaded successfully
+            $productPic = json_encode($uploadedFiles);
+        }
 
 
-   // --------------------------- THIS CODE FOR WHEN UPLOAD MULTIPLE IMAGE ------------- END --------------> 
-   $p_category = $this->request->getVar("p_category") ?? "";
-   $p_name = $this->request->getVar("p_name") ?? "";
+        // --------------------------- THIS CODE FOR WHEN UPLOAD MULTIPLE IMAGE ------------- END --------------> 
+        $p_category = $this->request->getVar("p_category") ?? "";
+        $p_name = $this->request->getVar("p_name") ?? "";
 
-   $productSlug = url_title($p_name . ' ' . $p_category, '-', true);
+        $productSlug = url_title($p_name . ' ' . $p_category, '-', true);
 
         $data = [
             "p_category" => $p_category ?? "",
@@ -149,104 +192,153 @@ class ProductController extends ResourceController
             $productAdd = $ProductModel->insert($data);
             if ($productAdd) {
                 return $this->response->setJSON([
-                    "status" => "success",
+                    "status" => true,
                     "message" => "Product uploaded successfully",
                     "data" => $data
                 ]);
             } else {
                 return $this->response->setJSON([
-                    "status" => "error",
+                    "status" => false,
                     "message" => "Product not uploaded"
                 ]);
             }
         } catch (\Throwable $th) {
             return $this->response->setJSON([
-                "status" => "error",
+                "status" => false,
                 "message" => $th->getMessage()
             ]);
         }
     }
 
-    public function updateCustomer()
+    public function updateProduct()
     {
-        // $isToken = check_jwt_authentication();
-
-        // if (!$isToken) {
-        //     return $this->response->setJSON([
-        //         "status" => "error",
-        //         "message" => "Authentication failed"
-        //     ]);
-        // }
 
         $ProductModel = new ProductModel();
+        $productId = $this->request->getGet("id");
 
-        $c_password = $this->request->getVar("c_password") ?? "Advance123";
+        $p_category = $this->request->getVar("p_category") ?? "";
+        $p_name = $this->request->getVar("p_name") ?? "";
+
+        $productSlug = url_title($p_name . ' ' . $p_category, '-', true);
 
         $data = [
-            "p_name" => $this->request->getVar("p_name") ?? "",
-            "c_password" => hash('sha256', $c_password),
+            "p_category" => $p_category ?? "",
             "p_unique_id" => $this->request->getVar("p_unique_id") ?? "",
-            "c_email" => $this->request->getVar("c_email") ?? "",
-            "c_mobile" => $this->request->getVar("c_mobile") ?? "",
-            "c_post" => $this->request->getVar("c_post") ?? "",
-            "c_department" => $this->request->getVar("c_department") ?? "",
-            "c_status" => $this->request->getVar("c_status") ?? "",
-            "c_gender" => $this->request->getVar("c_gender") ?? "",
-            "c_description" => $this->request->getVar("c_description") ?? "",
-            "c_dob" => $this->request->getVar("c_dob") ?? "",
-            "c_address" => $this->request->getVar("c_address") ?? "",
-            "c_rank" => $this->request->getVar("c_rank") ?? "",
-            "c_no_of_quotation" => $this->request->getVar("c_no_of_quotation") ?? "",
+            "p_name" => $p_name ?? "",
+            "p_slug" => $productSlug ?? "",
+            "p_price" => $this->request->getVar("p_price") ?? "",
+            "p_material" => $this->request->getVar("p_material") ?? "",
+            "p_moc" => $this->request->getVar("p_moc") ?? "",
+            "p_dimension" => $this->request->getVar("p_dimension") ?? "",
+            "p_brand" => $this->request->getVar("p_brand") ?? "",
+            "p_color" => $this->request->getVar("p_color") ?? "",
+            "p_weight" => $this->request->getVar("p_weight") ?? "",
+            "p_description" => $this->request->getVar("p_description") ?? "",
+            "p_manufacturer" => $this->request->getVar("p_manufacturer") ?? "",
+            "p_country" => $this->request->getVar("p_country") ?? "",
+            "p_code" => $this->request->getVar("p_code") ?? "",
+            "p_drawing_no" => $this->request->getVar("p_drawing_no") ?? "",
+            "p_finish_type" => $this->request->getVar("p_finish_type") ?? "",
+            "p_status" => $this->request->getVar("p_status") ?? "",
         ];
 
-        $customerId = $this->request->getGet("id");
-
         try {
-
-            $ProductModel->update($customerId, $data);
-            $updateCustomer = $ProductModel->where("p_id", $customerId)->first();
-            if ($updateCustomer) {
+            $productUpdate = $ProductModel->update($productId, $data);
+            if ($productUpdate) {
                 return $this->response->setJSON([
-                    "status" => "success",
-                    "message" => "Customer updated",
-                    "data" => $updateCustomer
+                    "status" => true,
+                    "message" => "Product Update successfully",
+                    "data" => $data
                 ]);
             } else {
                 return $this->response->setJSON([
-                    "status" => "error",
-                    "message" => "Customer not update"
+                    "status" => false,
+                    "message" => "Product not Updated"
                 ]);
             }
         } catch (\Throwable $th) {
             return $this->response->setJSON([
-                "status" => "error",
-                "message" => $th->getMessage() . " " . $th->getLine()
+                "status" => false,
+                "message" => $th->getMessage()
             ]);
         }
     }
-     
+
     public function fetchHome()
     {
         $ProductModel = new ProductModel();
         $categoryModel = new CategoryModel();
 
         try {
-
-            $allProduct = $ProductModel->orderBy("p_id", "DESC")->findAll(20,0);
+            
+            $allProduct = $ProductModel->orderBy("p_id", "DESC")->findAll(20, 0);
+            return $this->response->setJSON([
+                "status" => true,
+                "message" => 'Home page details fetched successfully',
+                "data" => $allProduct
+            ]);
             $countProduct = $ProductModel->countAllResults();
 
-            $allCategory = $categoryModel->orderBy("cat_id", "DESC")->findAll(20,0);
+            $allCategory = $categoryModel->orderBy("cat_id", "DESC")->findAll(20, 0);
             $countCategory = $categoryModel->countAllResults();
 
+            $newProductArray = [];
+            foreach ($allProduct as $product) {
+
+                if ($product["p_media"]) {
+                    $decodedProductImage = json_decode($product['p_media'], true);
+                    $product['p_image'] = "https://api.advanceengineerings.com/" . $decodedProductImage[0];
+                    $newProductArray[] = $product;
+                }
+            }
+
+            $extraFeatureOne = [];
+            $extraFeatureTwo = [];
+            $extraFeatureThree = [];
+            $dealZone = [];
+
+            foreach ($allProduct as $product) {
+                if ($product["p_media"]) {
+                    $decodedProductImage = json_decode($product['p_media'], true);
+                    $product['p_image'] = "https://api.advanceengineerings.com/" . $decodedProductImage[0];
+                }
+                if (count($dealZone) < 5) {
+                    $dealZone[] = $product;
+                }
+            }
+
+            foreach ($allCategory as $category) {
+                if (count($extraFeatureOne) < 7) {
+                    $newArr = [];
+                    $newArr["cat_name"] = $category['cat_name'] ;
+                    $newArr["cat_id"] = $category['cat_id'] ?? false;
+                    $extraFeatureOne[] = $newArr;
+                } else if (count($extraFeatureTwo) < 7) {
+                    $newArr = [];
+                    $newArr["cat_name"] = $category['cat_name'];
+                    $newArr["cat_id"] = $category['cat_id'] ?? false;
+                    $extraFeatureTwo[] = $newArr;
+                } else if (count($extraFeatureThree) < 7) {
+                    $newArr = [];
+                    $newArr["cat_name"] = $category['cat_name'];
+                    $newArr["cat_id"] = $category['cat_id'] ?? false;
+                    $extraFeatureThree[] = $newArr;
+                }
+
+            }
 
             if ($allProduct) {
                 return $this->response->setJSON([
-                    "status" => "success",
+                    "status" => true,
                     "message" => 'Home page details fetched successfully',
-                    "productArray" => $allProduct,
+                    "productArray" => $newProductArray,
                     "productCount" => $countProduct,
                     "categoryArray" => $allCategory,
                     "categoryCount" => $countCategory,
+                    "extraFeatureOne" => $extraFeatureOne,
+                    "extraFeatureTwo" => $extraFeatureTwo,
+                    "extraFeatureThree" => $extraFeatureThree,
+                    "dealZone" => $dealZone,
                 ]);
             } else {
                 return $this->response->setJSON([

@@ -57,7 +57,6 @@ class LoginController extends ResourceController
     }
     public function crmLogin()
     {
-
         $username = $this->request->getPost('username') ?? "";
         $password = $this->request->getPost('password') ?? "";
         
@@ -88,9 +87,6 @@ class LoginController extends ResourceController
                 return $this->response->setJSON([
                     "status" => false,
                     "message" => "Invalid username or password",
-                    "data" => (object) [],
-                    'password' => $password,
-                    "hash" => hash('sha256', $password),
                 ]);
             }
         } catch (\Throwable $th) {

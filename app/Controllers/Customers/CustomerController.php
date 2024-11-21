@@ -3,9 +3,12 @@
 namespace App\Controllers\Customers;
 
 use App\Controllers\BaseController;
+use App\Models\crm\InquiryModel;
+use App\Models\Customer\CartModel;
 use App\Models\Customer\CustomerModel;
+use App\Models\Product\ProductModel;
 use CodeIgniter\RESTful\ResourceController;
-
+helper("token");
 class CustomerController extends ResourceController
 {
 
@@ -83,6 +86,28 @@ class CustomerController extends ResourceController
                 'data' => null
             ]);
         }
+    }
+
+    public function CustomerDetail()
+    {
+        $isToken = check_jwt_authentication();
+
+        if (!$isToken) {
+            return $this->response->setJSON([
+                "status" => false,
+                "message" => "Authentication failed"
+            ]);
+        } else {
+            return $this->response->setJSON([
+                "status" => true,
+                "data" => $isToken,
+                "message" => "Customer details Fetched successfully"
+            ]);
+
+        }
+
+
+
     }
 
     public function creatCustomer()
@@ -235,4 +260,169 @@ class CustomerController extends ResourceController
             ]);
         }
     }
+
+    public function creatInquiry()
+    {
+        $inquiryModel = new InquiryModel();
+
+        $data = [
+            "inq_name" => $this->request->getVar("inq_name") ?? "",
+            "inq_message" => $this->request->getVar("inq_message") ?? "",
+            "inq_contact" => $this->request->getVar("inq_contact") ?? "",
+        ];
+
+        try {
+            $inquiryAdd = $inquiryModel->insert($data);
+            if ($inquiryAdd) {
+                return $this->response->setJSON([
+                    "status" => true,
+                    "message" => "Inquiry add successfully",
+                    "data" => $data
+                ]);
+            } else {
+                return $this->response->setJSON([
+                    "status" => false,
+                    "message" => "Inquiry not uploaded"
+                ]);
+            }
+        } catch (\Throwable $th) {
+            return $this->response->setJSON([
+                "status" => false,
+                "message" => $th->getMessage()
+            ]);
+        }
+    }
+
+    public function addToCart()
+    {
+        $isToken = check_jwt_authentication();
+
+        if (!$isToken) {
+            return $this->response->setJSON([
+                "status" => false,
+                "message" => "Authentication failed"
+            ]);
+        }
+
+       
+        $data = [
+            "cart_product_id" => $this->request->getGet("proId") ?? "",
+            "cart_customer_id" => $isToken->c_id ?? "",
+        ];
+
+        $cartModel = new CartModel();
+        try {
+            $cartAdd = $cartModel->insert($data);
+
+            if ($cartAdd) {
+                return $this->response->setJSON([
+                    "status" => "success",
+                    "message" => "Cart add successfully",
+                    "data" => $data
+                ]);
+            } else {
+                return $this->response->setJSON([
+                    "status" => "error",
+                    "message" => "Cart not add"
+                ]);
+            }
+        } catch (\Throwable $th) {
+            return $this->response->setJSON([
+                "status" => "error",
+                "message" => $th->getMessage()
+            ]);
+        }
+    }
+    public function removeCart()
+    {
+        $isToken = check_jwt_authentication();
+
+        if (!$isToken) {
+            return $this->response->setJSON([
+                "status" => false,
+                "message" => "Authentication failed"
+            ]);
+        }
+
+       
+        $cart_id = $this->request->getGet("cartId");
+
+        $cartModel = new CartModel();
+
+        try {
+            if($cart_id){
+                $cartRemove = $cartModel->delete($cart_id);
+                if ($cartRemove) {
+                    return $this->response->setJSON([
+                        "status" => "success",
+                        "message" => "Cart remove successfully",
+                    ]);
+                } else {
+                    return $this->response->setJSON([
+                        "status" => "error",
+                        "message" => "Cart not removed"
+                    ]);
+                }
+            }
+            else {
+                return $this->response->setJSON([
+                    "status" => "error",
+                    "message" => "Cart id does not exist",
+                    "data" => $cart_id
+                ]);
+            }
+
+        } catch (\Throwable $th) {
+            return $this->response->setJSON([
+                "status" => "error",
+                "message" => $th->getMessage()
+            ]);
+        }
+    }
+
+    public function CartList()
+    {
+        $isToken = check_jwt_authentication();
+
+        if (!$isToken) {
+            return $this->response->setJSON([
+                "status" => false,
+                "message" => "Authentication failed"
+            ]);
+        }
+
+        $cartModel = new CartModel();
+        $productModel = new ProductModel();
+        try {
+            $allCart = $cartModel->where("cart_customer_id",$isToken->c_id)->findAll();
+
+            $newArr = [];
+            if ($allCart) {
+                foreach ($allCart as $cart){
+                    $productDetails = $productModel->where("p_id",$cart['cart_product_id'])->first();
+                    if ($productDetails){
+                        $cart['product_details'] = $productDetails;
+                        $newArr = $cart;
+                    }
+                }
+
+                return $this->response->setJSON([
+                    "status" => "success",
+                    "message" => "Cart fetch successfully",
+                    "data" => $newArr
+                ]);
+            } else {
+                return $this->response->setJSON([
+                    "status" => "error",
+                    "message" => "Cart not fetched"
+                ]);
+            }
+        } catch (\Throwable $th) {
+            return $this->response->setJSON([
+                "status" => "error",
+                "message" => $th->getMessage() . $th->getLine()
+            ]);
+        }
+    }
+
 }
