@@ -19,6 +19,15 @@ $routes->group('crm', function ($routes) {
         $routes->post('add-customer', 'Customers\CustomerController::creatCustomer');
         $routes->post('update-customer', 'Customers\CustomerController::updateCustomer');
     });
+
+    $routes->group('quotation', function ($routes) {
+        $routes->get('fetch-quotation', 'Quotation\QuotationController::fetchQuotation');
+        $routes->post('add-quotation', 'Quotation\QuotationController::creatQuotation');
+    });
+    $routes->group('invoice', function ($routes) {
+        $routes->get('fetch-invoice', 'Invoice\InvoiceController::fetchInvoice');
+        $routes->post('add-invoice', 'Invoice\InvoiceController::creatInvoice');
+    });
     
     $routes->group('product', function ($routes) {
         $routes->get('fetch-product', 'Products\ProductController::fetchProduct');
@@ -32,6 +41,8 @@ $routes->group('crm', function ($routes) {
         $routes->post('add-category', 'Category\CategoryController::creatCategory');
         $routes->post('update-category', 'Category\CategoryController::updateCategory');
     });
+
+
     
 });
 $routes->get('product', 'Products\ProductController::fetchProduct');

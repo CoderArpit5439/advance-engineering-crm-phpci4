@@ -272,11 +272,6 @@ class ProductController extends ResourceController
         try {
             
             $allProduct = $ProductModel->orderBy("p_id", "DESC")->findAll(20, 0);
-            return $this->response->setJSON([
-                "status" => true,
-                "message" => 'Home page details fetched successfully',
-                "data" => $allProduct
-            ]);
             $countProduct = $ProductModel->countAllResults();
 
             $allCategory = $categoryModel->orderBy("cat_id", "DESC")->findAll(20, 0);
