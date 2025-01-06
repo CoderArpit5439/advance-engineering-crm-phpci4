@@ -193,6 +193,7 @@ class CategoryController extends ResourceController
             } catch (\Throwable $th) {
                 return $this->response->setJSON([
                     'status' => 'error',
+                    'a' => $th->getMessage(),
                     'message' => $th->getTrace(),
                     'data' => null
                 ]);

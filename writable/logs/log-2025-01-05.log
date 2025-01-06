@@ -1,0 +1,219 @@
+ERROR - 2025-01-05 12:06:49 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: YES) in C:\Projects\advance-engineering-crm-phpci4\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\Projects\advance-engineering-crm-phpci4\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'advance_enginee...', 3306, '', 0)
+#1 C:\Projects\advance-engineering-crm-phpci4\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Projects\advance-engineering-crm-phpci4\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Projects\advance-engineering-crm-phpci4\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Projects\advance-engineering-crm-phpci4\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Projects\advance-engineering-crm-phpci4\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Projects\advance-engineering-crm-phpci4\app\Controllers\Category\CategoryController.php(171): CodeIgniter\BaseModel->findAll()
+#7 C:\Projects\advance-engineering-crm-phpci4\system\CodeIgniter.php(919): App\Controllers\Category\CategoryController->fetchCategoryList()
+#8 C:\Projects\advance-engineering-crm-phpci4\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category\CategoryController))
+#9 C:\Projects\advance-engineering-crm-phpci4\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Projects\advance-engineering-crm-phpci4\public\index.php(73): CodeIgniter\CodeIgniter->run()
+#11 C:\Projects\advance-engineering-crm-phpci4\system\Commands\Server\rewrite.php(47): require_once('C:\\Projects\\adv...')
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in C:\Projects\advance-engineering-crm-phpci4\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\Projects\advance-engineering-crm-phpci4\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Projects\advance-engineering-crm-phpci4\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Projects\advance-engineering-crm-phpci4\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Projects\advance-engineering-crm-phpci4\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Projects\advance-engineering-crm-phpci4\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\Projects\advance-engineering-crm-phpci4\app\Controllers\Category\CategoryController.php(171): CodeIgniter\BaseModel->findAll()
+#6 C:\Projects\advance-engineering-crm-phpci4\system\CodeIgniter.php(919): App\Controllers\Category\CategoryController->fetchCategoryList()
+#7 C:\Projects\advance-engineering-crm-phpci4\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category\CategoryController))
+#8 C:\Projects\advance-engineering-crm-phpci4\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Projects\advance-engineering-crm-phpci4\public\index.php(73): CodeIgniter\CodeIgniter->run()
+#10 C:\Projects\advance-engineering-crm-phpci4\system\Commands\Server\rewrite.php(47): require_once('C:\\Projects\\adv...')
+#11 {main}
+CRITICAL - 2025-01-05 12:08:21 --> Call to undefined function App\Controllers\Graphic\check_jwt_authentication()
+in APPPATH\Controllers\Graphic\GraphicController.php on line 12.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Graphic\GraphicController->addGraphic()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Graphic\GraphicController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(73): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Projects\\advance-engineering-crm-phpci4\\public\\index.php')
+ERROR - 2025-01-05 12:10:19 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: YES) in C:\Projects\advance-engineering-crm-phpci4\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\Projects\advance-engineering-crm-phpci4\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'advance_enginee...', 3306, '', 0)
+#1 C:\Projects\advance-engineering-crm-phpci4\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Projects\advance-engineering-crm-phpci4\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Projects\advance-engineering-crm-phpci4\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Projects\advance-engineering-crm-phpci4\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Projects\advance-engineering-crm-phpci4\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Projects\advance-engineering-crm-phpci4\app\Controllers\Category\CategoryController.php(171): CodeIgniter\BaseModel->findAll()
+#7 C:\Projects\advance-engineering-crm-phpci4\system\CodeIgniter.php(919): App\Controllers\Category\CategoryController->fetchCategoryList()
+#8 C:\Projects\advance-engineering-crm-phpci4\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category\CategoryController))
+#9 C:\Projects\advance-engineering-crm-phpci4\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Projects\advance-engineering-crm-phpci4\public\index.php(73): CodeIgniter\CodeIgniter->run()
+#11 C:\Projects\advance-engineering-crm-phpci4\system\Commands\Server\rewrite.php(47): require_once('C:\\Projects\\adv...')
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in C:\Projects\advance-engineering-crm-phpci4\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\Projects\advance-engineering-crm-phpci4\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Projects\advance-engineering-crm-phpci4\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Projects\advance-engineering-crm-phpci4\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Projects\advance-engineering-crm-phpci4\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Projects\advance-engineering-crm-phpci4\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\Projects\advance-engineering-crm-phpci4\app\Controllers\Category\CategoryController.php(171): CodeIgniter\BaseModel->findAll()
+#6 C:\Projects\advance-engineering-crm-phpci4\system\CodeIgniter.php(919): App\Controllers\Category\CategoryController->fetchCategoryList()
+#7 C:\Projects\advance-engineering-crm-phpci4\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category\CategoryController))
+#8 C:\Projects\advance-engineering-crm-phpci4\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Projects\advance-engineering-crm-phpci4\public\index.php(73): CodeIgniter\CodeIgniter->run()
+#10 C:\Projects\advance-engineering-crm-phpci4\system\Commands\Server\rewrite.php(47): require_once('C:\\Projects\\adv...')
+#11 {main}
+ERROR - 2025-01-05 12:11:22 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: YES) in C:\Projects\advance-engineering-crm-phpci4\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\Projects\advance-engineering-crm-phpci4\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'advance_enginee...', 3306, '', 0)
+#1 C:\Projects\advance-engineering-crm-phpci4\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Projects\advance-engineering-crm-phpci4\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Projects\advance-engineering-crm-phpci4\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Projects\advance-engineering-crm-phpci4\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Projects\advance-engineering-crm-phpci4\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Projects\advance-engineering-crm-phpci4\app\Controllers\Category\CategoryController.php(171): CodeIgniter\BaseModel->findAll()
+#7 C:\Projects\advance-engineering-crm-phpci4\system\CodeIgniter.php(919): App\Controllers\Category\CategoryController->fetchCategoryList()
+#8 C:\Projects\advance-engineering-crm-phpci4\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category\CategoryController))
+#9 C:\Projects\advance-engineering-crm-phpci4\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Projects\advance-engineering-crm-phpci4\public\index.php(73): CodeIgniter\CodeIgniter->run()
+#11 C:\Projects\advance-engineering-crm-phpci4\system\Commands\Server\rewrite.php(47): require_once('C:\\Projects\\adv...')
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in C:\Projects\advance-engineering-crm-phpci4\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\Projects\advance-engineering-crm-phpci4\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Projects\advance-engineering-crm-phpci4\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Projects\advance-engineering-crm-phpci4\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Projects\advance-engineering-crm-phpci4\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Projects\advance-engineering-crm-phpci4\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\Projects\advance-engineering-crm-phpci4\app\Controllers\Category\CategoryController.php(171): CodeIgniter\BaseModel->findAll()
+#6 C:\Projects\advance-engineering-crm-phpci4\system\CodeIgniter.php(919): App\Controllers\Category\CategoryController->fetchCategoryList()
+#7 C:\Projects\advance-engineering-crm-phpci4\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category\CategoryController))
+#8 C:\Projects\advance-engineering-crm-phpci4\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Projects\advance-engineering-crm-phpci4\public\index.php(73): CodeIgniter\CodeIgniter->run()
+#10 C:\Projects\advance-engineering-crm-phpci4\system\Commands\Server\rewrite.php(47): require_once('C:\\Projects\\adv...')
+#11 {main}
+ERROR - 2025-01-05 12:15:48 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: YES) in C:\Projects\advance-engineering-crm-phpci4\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\Projects\advance-engineering-crm-phpci4\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'advance_enginee...', 3306, '', 0)
+#1 C:\Projects\advance-engineering-crm-phpci4\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Projects\advance-engineering-crm-phpci4\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Projects\advance-engineering-crm-phpci4\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Projects\advance-engineering-crm-phpci4\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Projects\advance-engineering-crm-phpci4\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Projects\advance-engineering-crm-phpci4\app\Controllers\Category\CategoryController.php(171): CodeIgniter\BaseModel->findAll()
+#7 C:\Projects\advance-engineering-crm-phpci4\system\CodeIgniter.php(919): App\Controllers\Category\CategoryController->fetchCategoryList()
+#8 C:\Projects\advance-engineering-crm-phpci4\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category\CategoryController))
+#9 C:\Projects\advance-engineering-crm-phpci4\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Projects\advance-engineering-crm-phpci4\public\index.php(73): CodeIgniter\CodeIgniter->run()
+#11 C:\Projects\advance-engineering-crm-phpci4\system\Commands\Server\rewrite.php(47): require_once('C:\\Projects\\adv...')
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in C:\Projects\advance-engineering-crm-phpci4\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\Projects\advance-engineering-crm-phpci4\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Projects\advance-engineering-crm-phpci4\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Projects\advance-engineering-crm-phpci4\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Projects\advance-engineering-crm-phpci4\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Projects\advance-engineering-crm-phpci4\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\Projects\advance-engineering-crm-phpci4\app\Controllers\Category\CategoryController.php(171): CodeIgniter\BaseModel->findAll()
+#6 C:\Projects\advance-engineering-crm-phpci4\system\CodeIgniter.php(919): App\Controllers\Category\CategoryController->fetchCategoryList()
+#7 C:\Projects\advance-engineering-crm-phpci4\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category\CategoryController))
+#8 C:\Projects\advance-engineering-crm-phpci4\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Projects\advance-engineering-crm-phpci4\public\index.php(73): CodeIgniter\CodeIgniter->run()
+#10 C:\Projects\advance-engineering-crm-phpci4\system\Commands\Server\rewrite.php(47): require_once('C:\\Projects\\adv...')
+#11 {main}
+ERROR - 2025-01-05 12:18:29 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: YES) in C:\Projects\advance-engineering-crm-phpci4\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\Projects\advance-engineering-crm-phpci4\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'advance_enginee...', 3306, '', 0)
+#1 C:\Projects\advance-engineering-crm-phpci4\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Projects\advance-engineering-crm-phpci4\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Projects\advance-engineering-crm-phpci4\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Projects\advance-engineering-crm-phpci4\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Projects\advance-engineering-crm-phpci4\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Projects\advance-engineering-crm-phpci4\app\Controllers\Category\CategoryController.php(171): CodeIgniter\BaseModel->findAll()
+#7 C:\Projects\advance-engineering-crm-phpci4\system\CodeIgniter.php(919): App\Controllers\Category\CategoryController->fetchCategoryList()
+#8 C:\Projects\advance-engineering-crm-phpci4\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category\CategoryController))
+#9 C:\Projects\advance-engineering-crm-phpci4\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Projects\advance-engineering-crm-phpci4\public\index.php(73): CodeIgniter\CodeIgniter->run()
+#11 C:\Projects\advance-engineering-crm-phpci4\system\Commands\Server\rewrite.php(47): require_once('C:\\Projects\\adv...')
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in C:\Projects\advance-engineering-crm-phpci4\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\Projects\advance-engineering-crm-phpci4\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Projects\advance-engineering-crm-phpci4\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Projects\advance-engineering-crm-phpci4\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Projects\advance-engineering-crm-phpci4\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Projects\advance-engineering-crm-phpci4\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\Projects\advance-engineering-crm-phpci4\app\Controllers\Category\CategoryController.php(171): CodeIgniter\BaseModel->findAll()
+#6 C:\Projects\advance-engineering-crm-phpci4\system\CodeIgniter.php(919): App\Controllers\Category\CategoryController->fetchCategoryList()
+#7 C:\Projects\advance-engineering-crm-phpci4\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category\CategoryController))
+#8 C:\Projects\advance-engineering-crm-phpci4\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Projects\advance-engineering-crm-phpci4\public\index.php(73): CodeIgniter\CodeIgniter->run()
+#10 C:\Projects\advance-engineering-crm-phpci4\system\Commands\Server\rewrite.php(47): require_once('C:\\Projects\\adv...')
+#11 {main}
+ERROR - 2025-01-05 12:29:56 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: YES) in C:\Projects\advance-engineering-crm-phpci4\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\Projects\advance-engineering-crm-phpci4\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'advance_enginee...', 3306, '', 0)
+#1 C:\Projects\advance-engineering-crm-phpci4\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Projects\advance-engineering-crm-phpci4\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Projects\advance-engineering-crm-phpci4\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Projects\advance-engineering-crm-phpci4\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Projects\advance-engineering-crm-phpci4\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Projects\advance-engineering-crm-phpci4\app\Controllers\Category\CategoryController.php(171): CodeIgniter\BaseModel->findAll()
+#7 C:\Projects\advance-engineering-crm-phpci4\system\CodeIgniter.php(919): App\Controllers\Category\CategoryController->fetchCategoryList()
+#8 C:\Projects\advance-engineering-crm-phpci4\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category\CategoryController))
+#9 C:\Projects\advance-engineering-crm-phpci4\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Projects\advance-engineering-crm-phpci4\public\index.php(73): CodeIgniter\CodeIgniter->run()
+#11 C:\Projects\advance-engineering-crm-phpci4\system\Commands\Server\rewrite.php(47): require_once('C:\\Projects\\adv...')
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in C:\Projects\advance-engineering-crm-phpci4\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\Projects\advance-engineering-crm-phpci4\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Projects\advance-engineering-crm-phpci4\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Projects\advance-engineering-crm-phpci4\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Projects\advance-engineering-crm-phpci4\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Projects\advance-engineering-crm-phpci4\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\Projects\advance-engineering-crm-phpci4\app\Controllers\Category\CategoryController.php(171): CodeIgniter\BaseModel->findAll()
+#6 C:\Projects\advance-engineering-crm-phpci4\system\CodeIgniter.php(919): App\Controllers\Category\CategoryController->fetchCategoryList()
+#7 C:\Projects\advance-engineering-crm-phpci4\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category\CategoryController))
+#8 C:\Projects\advance-engineering-crm-phpci4\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Projects\advance-engineering-crm-phpci4\public\index.php(73): CodeIgniter\CodeIgniter->run()
+#10 C:\Projects\advance-engineering-crm-phpci4\system\Commands\Server\rewrite.php(47): require_once('C:\\Projects\\adv...')
+#11 {main}
+ERROR - 2025-01-05 12:43:05 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: YES) in C:\Projects\advance-engineering-crm-phpci4\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\Projects\advance-engineering-crm-phpci4\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'advance_enginee...', 3306, '', 0)
+#1 C:\Projects\advance-engineering-crm-phpci4\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Projects\advance-engineering-crm-phpci4\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Projects\advance-engineering-crm-phpci4\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `gr...', Array, false)
+#4 C:\Projects\advance-engineering-crm-phpci4\system\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\Projects\advance-engineering-crm-phpci4\system\BaseModel.php(788): CodeIgniter\Model->doInsert(Array)
+#6 C:\Projects\advance-engineering-crm-phpci4\system\Model.php(715): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\Projects\advance-engineering-crm-phpci4\app\Controllers\Graphic\GraphicController.php(70): CodeIgniter\Model->insert(Array)
+#8 C:\Projects\advance-engineering-crm-phpci4\system\CodeIgniter.php(919): App\Controllers\Graphic\GraphicController->addGraphic()
+#9 C:\Projects\advance-engineering-crm-phpci4\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Graphic\GraphicController))
+#10 C:\Projects\advance-engineering-crm-phpci4\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Projects\advance-engineering-crm-phpci4\public\index.php(73): CodeIgniter\CodeIgniter->run()
+#12 C:\Projects\advance-engineering-crm-phpci4\system\Commands\Server\rewrite.php(47): require_once('C:\\Projects\\adv...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in C:\Projects\advance-engineering-crm-phpci4\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\Projects\advance-engineering-crm-phpci4\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Projects\advance-engineering-crm-phpci4\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Projects\advance-engineering-crm-phpci4\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `gr...', Array, false)
+#3 C:\Projects\advance-engineering-crm-phpci4\system\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#4 C:\Projects\advance-engineering-crm-phpci4\system\BaseModel.php(788): CodeIgniter\Model->doInsert(Array)
+#5 C:\Projects\advance-engineering-crm-phpci4\system\Model.php(715): CodeIgniter\BaseModel->insert(Array, true)
+#6 C:\Projects\advance-engineering-crm-phpci4\app\Controllers\Graphic\GraphicController.php(70): CodeIgniter\Model->insert(Array)
+#7 C:\Projects\advance-engineering-crm-phpci4\system\CodeIgniter.php(919): App\Controllers\Graphic\GraphicController->addGraphic()
+#8 C:\Projects\advance-engineering-crm-phpci4\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Graphic\GraphicController))
+#9 C:\Projects\advance-engineering-crm-phpci4\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Projects\advance-engineering-crm-phpci4\public\index.php(73): CodeIgniter\CodeIgniter->run()
+#11 C:\Projects\advance-engineering-crm-phpci4\system\Commands\Server\rewrite.php(47): require_once('C:\\Projects\\adv...')
+#12 {main}

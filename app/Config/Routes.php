@@ -43,6 +43,11 @@ $routes->group('crm', function ($routes) {
     });
 
 
+    $routes->group('graphic', function ($routes) {
+        $routes->post('add-graphic', 'Graphic\GraphicController::addGraphic');
+        $routes->get('fetch-graphic', 'Graphic\GraphicController::fetchGraphic');
+    });
+    
     
 });
 $routes->get('product', 'Products\ProductController::fetchProduct');
