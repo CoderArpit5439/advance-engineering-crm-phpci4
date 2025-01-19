@@ -26,6 +26,7 @@ $routes->group('crm', function ($routes) {
         $routes->get('fetch-quotation', 'Quotation\QuotationController::fetchQuotation');
         $routes->post('add-quotation', 'Quotation\QuotationController::creatQuotation');
     });
+
     $routes->group('invoice', function ($routes) {
         $routes->get('fetch-invoice', 'Invoice\InvoiceController::fetchInvoice');
         $routes->post('add-invoice', 'Invoice\InvoiceController::creatInvoice');
@@ -56,6 +57,12 @@ $routes->group('crm', function ($routes) {
         $routes->post('add-employe', 'Employee\EmployeeController::AddEmployee');
         $routes->get('get-employe', 'Employee\EmployeeController::GetEmployee');
         $routes->get('remove-employe', 'Employee\EmployeeController::RemoveEmployee');
+    });
+
+    $routes->group('media', function ($routes) {
+        // $routes->get('media-list', 'Media\MediaController::getMedia');
+        $routes->post('add-media', 'Media\MediaController::addMedia');
+  
     });
 });
 $routes->get('product', 'Products\ProductController::fetchProduct');
