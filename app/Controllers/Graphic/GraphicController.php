@@ -61,7 +61,7 @@ class GraphicController extends ResourceController
       $data = [
          "g_name" => $isToken->user_name ?? "",
          "g_title" => $this->request->getVar("graphic_title") ?? "",
-         "g_approved" =>"no",
+         "g_approved" => "no",
          "g_image" => $fileName ?? "",
       ];
       try {
@@ -127,55 +127,120 @@ class GraphicController extends ResourceController
    //     }
    // }
    public function fetchGraphic()
-{
-    $graphicModel = new GraphicModel();
+   {
+      $graphicModel = new GraphicModel();
 
-    try {
-        // Get the page and search parameters with defaults
-        $page = (int) ($this->request->getGet("page") ?? 1); // Default to page 1
-        $page = ($page > 0) ? $page : 1; // Ensure page is a positive number
+      try {
+         // Get the page and search parameters with defaults
+         $page = (int) ($this->request->getGet("page") ?? 1); // Default to page 1
+         $page = ($page > 0) ? $page : 1; // Ensure page is a positive number
 
-        $search = $this->request->getGet("search") ?? ""; // Default to an empty string
+         $search = $this->request->getGet("search") ?? ""; // Default to an empty string
 
-        // Calculate offset for pagination
-        $limit = 20; // Items per page
-        $offset = ($page - 1) * $limit;
+         // Calculate offset for pagination
+         $limit = 20; // Items per page
+         $offset = ($page - 1) * $limit;
 
-        // Fetch graphics based on pagination and search
-        if ($search) {
+         // Fetch graphics based on pagination and search
+         if ($search) {
             $allCategory = $graphicModel
-                ->like("title", $search)
-                ->orderBy("g_id", "DESC")
-                ->findAll($limit, $offset);
-        } else {
+               ->like("title", $search)
+               ->orderBy("g_id", "DESC")
+               ->findAll($limit, $offset);
+         } else {
             $allCategory = $graphicModel
-                ->orderBy("g_id", "DESC")
-                ->findAll($limit, $offset);
-        }
+               ->orderBy("g_id", "DESC")
+               ->findAll($limit, $offset);
+         }
 
-        $countGraphic = $graphicModel->countAllResults();
+         $countGraphic = $graphicModel->countAllResults();
 
-        if ($allCategory) {
+         if ($allCategory) {
             return $this->response->setJSON([
-                "status" => "success",
-                "message" => count($allCategory) . ' Graphic Images found',
-                "data" => $allCategory,
-                "count" => $countGraphic,
+               "status" => "success",
+               "message" => count($allCategory) . ' Graphic Images found',
+               "data" => $allCategory,
+               "count" => $countGraphic,
             ]);
-        } else {
+         } else {
             return $this->response->setJSON([
-                'status' => 'error',
-                'data' => null,
-                'message' => 'Graphic Images not found',
+               'status' => 'error',
+               'data' => null,
+               'message' => 'Graphic Images not found',
             ]);
-        }
-    } catch (\Throwable $th) {
-        return $this->response->setJSON([
+         }
+      } catch (\Throwable $th) {
+         return $this->response->setJSON([
             'status' => 'error',
             'message' => $th->getMessage(), // Send the actual error message
             'data' => null
-        ]);
-    }
-}
+         ]);
+      }
+   }
 
+   public function updateGraphic()
+   {
+      // Check if JWT Token is valid
+      $isToken = check_jwt_authentication();
+      if (!$isToken) {
+         return $this->response->setJSON([
+            "message" => "Authentication failed",
+            "status" => "error"
+         ]);
+      }
+ 
+
+      $graphicId = $this->request->getVar("graphic_id");
+      if (empty($graphicId)) {
+         return $this->response->setJSON([
+            "status" => "error",
+            "message" => "Graphic id is required"
+         ]);
+      }
+
+      $graphicApproved = $this->request->getVar("graphic_approved");
+      if (empty($graphicApproved)) {
+         return $this->response->setJSON([
+            "status" => "error",
+            "message" => "Graphic status is required"
+         ]);
+      }
+      // Check if the graphic exists in the database
+    
+
+      $graphicModel = new GraphicModel();
+      $graphic = $graphicModel->find($graphicId);
+
+      if (!$graphic) {
+         return $this->response->setJSON([
+            "status" => "error",
+            "message" => "no graphic found"
+         ]);
+      }
+
+
+
+      // Prepare data to update the graphic
+      $data = [
+
+         "g_approved" => $graphicApproved,
+
+      ];
+
+      try {
+         // Update the record in the database
+         $graphicModel->update($graphicId, $data);
+
+         return $this->response->setJSON([
+            "status" => "success",
+            "message" => "Graphic status updated successfully",
+            "data" => $data
+         ]);
+      } catch (\Throwable $th) {
+         return $this->response->setJSON([
+            "status" => "error",
+            "message" => "An error occurred: " . $th->getMessage()
+         ]);
+      }
+   }
 }

@@ -45,9 +45,11 @@ $routes->group('crm', function ($routes) {
     });
 
 
+    
     $routes->group('graphic', function ($routes) {
         $routes->post('add-graphic', 'Graphic\GraphicController::addGraphic');
         $routes->get('fetch-graphic', 'Graphic\GraphicController::fetchGraphic');
+        $routes->post('approve-graphic', 'Graphic\GraphicController::updateGraphic');
     });
 
     $routes->group('employee', function ($routes) {
