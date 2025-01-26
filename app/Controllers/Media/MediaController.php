@@ -140,7 +140,8 @@ class MediaController extends ResourceController
     }
 
     // Remove Media 
-    public function RemoveMedia() {
+    public function RemoveMedia()
+    {
         $isToken = check_jwt_authentication();
         if (!$isToken) {
             return $this->response->setJSON([
@@ -148,31 +149,31 @@ class MediaController extends ResourceController
                 "status" => "error"
             ]);
         }
-    
+
         // Get employee ID from request
         $mediaId = $this->request->getVar("media_id");
-    
+
         if (!$mediaId) {
             return $this->response->setJSON([
                 "status" => "error",
                 "message" => "Media ID is required"
             ]);
         }
-    
+
         try {
             $mediaModel = new MediaModel();
             $existingMedia = $mediaModel->find($mediaId);
-    
+
             if (!$existingMedia) {
                 return $this->response->setJSON([
                     "status" => "error",
                     "message" => "Media not found"
                 ]);
             }
-    
+
             // Delete employee record
             $deleteMedia = $mediaModel->delete($mediaId);
-    
+
             if ($deleteMedia) {
                 return $this->response->setJSON([
                     "status" => "success",
@@ -195,105 +196,104 @@ class MediaController extends ResourceController
     // Update Media 
 
     // Update Media 
-public function updateMedia()
-{
-    // Check if the token is valid
-    $isToken = check_jwt_authentication();
-    if (!$isToken) {
-        return $this->response->setJSON([
-            "message" => "Authentication failed",
-            "status" => "error"
-        ]);
-    }
-
-    // Get media ID from request
-    $mediaId = $this->request->getVar("media_id");
-    if (!$mediaId) {
-        return $this->response->setJSON([
-            "status" => "error",
-            "message" => "Media ID is required"
-        ]);
-    }
-
-    // Get the new data for media
-    $newProductId = $this->request->getVar("media_product_id");
-    $newImageFile = $this->request->getFile("media_image");
-
-    // If a new image is uploaded, handle the image upload
-    $fileName = null;
-    if ($newImageFile && $newImageFile->isValid() && !$newImageFile->hasMoved()) {
-        $uploadPath = FCPATH . 'public/assets/img/uploads/mediaImage/';
-
-        // Create directory if it doesn't exist
-        if (!is_dir($uploadPath)) {
-            mkdir($uploadPath, 0777, true);
-        }
-
-        // Check if the directory is writable
-        if (!is_dir($uploadPath) || !is_writable($uploadPath)) {
+    public function updateMedia()
+    {
+        // Check if the token is valid
+        $isToken = check_jwt_authentication();
+        if (!$isToken) {
             return $this->response->setJSON([
-                'status' => false,
-                'message' => 'Upload directory is not writable'
+                "message" => "Authentication failed",
+                "status" => "error"
             ]);
         }
 
-        // Move the uploaded file
-        $newImageFile->move($uploadPath);
-
-        if ($newImageFile->hasMoved()) {
-            $fileName = 'https://api.advanceengineerings.com/public/assets/img/uploads/mediaImage/' . $newImageFile->getName();
-        } else {
-            return $this->response->setJSON([
-                'status' => false,
-                'message' => 'Failed to upload media image'
-            ]);
-        }
-    }
-
-    // Prepare the data to update
-    $data = [];
-    if ($newProductId) {
-        $data["m_product_id"] = $newProductId;
-    }
-    if ($fileName) {
-        $data["m_image"] = $fileName;
-    }
-
-    try {
-        // Instantiate the media model
-        $mediaModel = new MediaModel();
-
-        // Check if the media exists in the database
-        $existingMedia = $mediaModel->find($mediaId);
-        if (!$existingMedia) {
+        // Get media ID from request
+        $mediaId = $this->request->getVar("media_id");
+        if (!$mediaId) {
             return $this->response->setJSON([
                 "status" => "error",
-                "message" => "Media not found"
+                "message" => "Media ID is required"
             ]);
         }
 
-        // Update the media record
-        $updateMedia = $mediaModel->update($mediaId, $data);
+        // Get the new data for media
+        $newProductId = $this->request->getVar("media_product_id");
+        $newImageFile = $this->request->getFile("media_image");
 
-        // Check if the update was successful
-        if ($updateMedia) {
-            return $this->response->setJSON([
-                "status" => "success",
-                "message" => "Media updated successfully",
-                "data" => $data
-            ]);
-        } else {
+        // If a new image is uploaded, handle the image upload
+        $fileName = null;
+        if ($newImageFile && $newImageFile->isValid() && !$newImageFile->hasMoved()) {
+            $uploadPath = FCPATH . 'public/assets/img/uploads/mediaImage/';
+
+            // Create directory if it doesn't exist
+            if (!is_dir($uploadPath)) {
+                mkdir($uploadPath, 0777, true);
+            }
+
+            // Check if the directory is writable
+            if (!is_dir($uploadPath) || !is_writable($uploadPath)) {
+                return $this->response->setJSON([
+                    'status' => false,
+                    'message' => 'Upload directory is not writable'
+                ]);
+            }
+
+            // Move the uploaded file
+            $newImageFile->move($uploadPath);
+
+            if ($newImageFile->hasMoved()) {
+                $fileName = 'https://api.advanceengineerings.com/public/assets/img/uploads/mediaImage/' . $newImageFile->getName();
+            } else {
+                return $this->response->setJSON([
+                    'status' => false,
+                    'message' => 'Failed to upload media image'
+                ]);
+            }
+        }
+
+        // Prepare the data to update
+        $data = [];
+        if ($newProductId) {
+            $data["m_product_id"] = $newProductId;
+        }
+        if ($fileName) {
+            $data["m_image"] = $fileName;
+        }
+
+        try {
+            // Instantiate the media model
+            $mediaModel = new MediaModel();
+
+            // Check if the media exists in the database
+            $existingMedia = $mediaModel->find($mediaId);
+            if (!$existingMedia) {
+                return $this->response->setJSON([
+                    "status" => "error",
+                    "message" => "Media not found"
+                ]);
+            }
+
+            // Update the media record
+            $updateMedia = $mediaModel->update($mediaId, $data);
+
+            // Check if the update was successful
+            if ($updateMedia) {
+                return $this->response->setJSON([
+                    "status" => "success",
+                    "message" => "Media updated successfully",
+                    "data" => $data
+                ]);
+            } else {
+                return $this->response->setJSON([
+                    "status" => "error",
+                    "message" => "Failed to update media"
+                ]);
+            }
+        } catch (\Throwable $th) {
             return $this->response->setJSON([
                 "status" => "error",
-                "message" => "Failed to update media"
+                "message" => $th->getMessage()
             ]);
         }
-    } catch (\Throwable $th) {
-        return $this->response->setJSON([
-            "status" => "error",
-            "message" => $th->getMessage()
-        ]);
     }
-}
-
 }

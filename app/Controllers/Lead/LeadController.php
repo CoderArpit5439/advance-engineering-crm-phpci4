@@ -2,6 +2,8 @@
 
 namespace App\Controllers\Lead;
 
+helper("token");
+
 use App\Models\crm\LeadModel;
 use CodeIgniter\RESTful\ResourceController;
 
@@ -81,10 +83,13 @@ class LeadController extends ResourceController
         try {
             $leadAdded = $leadModel->insert($data);
             if ($leadAdded) {
+                // Fetch all leads after addition
+                $allLeads = $leadModel->findAll();
+
                 return $this->response->setJSON([
                     "status" => "success",
                     "message" => "Lead added successfully",
-                    "data" => $data
+                    "data" => $allLeads // Return all leads after addition
                 ]);
             } else {
                 return $this->response->setJSON([
@@ -99,6 +104,7 @@ class LeadController extends ResourceController
             ]);
         }
     }
+
 
     public function updateLead()
     {
@@ -122,21 +128,98 @@ class LeadController extends ResourceController
             "l_join" => $this->request->getVar("l_join") ?? "",
         ];
 
-        $leadId = $this->request->getGet("id");
-
+        $leadId = $this->request->getVar("l_id");
+        if (!$leadId) {
+            return $this->response->setJSON([
+                "status" => "error",
+                "message" => "Lead ID is required"
+            ]);
+        }
+        $existingRecord = $leadModel->find($leadId);
+        
+        if (!$existingRecord) {
+            return $this->response->setJSON([
+                "status" => "error",
+                "message" => "lead not found"
+            ]);
+        }
+      
         try {
-            $leadModel->update($leadId, $data);
-            $updatedLead = $leadModel->where("l_id", $leadId)->first();
-            if ($updatedLead) {
+            // Perform the update
+            $updateSuccess = $leadModel->update($leadId,$data);
+    
+            // Check if the update was successful
+            if ($updateSuccess) {
+                $allLeads = $leadModel->findAll();
+
                 return $this->response->setJSON([
                     "status" => "success",
-                    "message" => "Lead updated",
-                    "data" => $updatedLead
+                    "message" => "Lead update successfully",
+                    "data" => $allLeads 
                 ]);
             } else {
                 return $this->response->setJSON([
                     "status" => "error",
-                    "message" => "Lead not updated"
+                    "message" => "Failed to update manufacturing record"
+                ]);
+            }
+        } catch (\Throwable $th) {
+            return $this->response->setJSON([
+                "status" => "error",
+                "message" => $th->getMessage()
+            ]);
+        }
+    }
+
+
+
+    public function removeLead()
+    {
+        $isToken = check_jwt_authentication();
+        if (!$isToken) {
+            return $this->response->setJSON([
+                "message" => "Authentication failed",
+                "status" => "error"
+            ]);
+        }
+
+        // Get lead ID from request
+        $leadId = $this->request->getVar("lead_id");
+
+        if (!$leadId) {
+            return $this->response->setJSON([
+                "status" => "error",
+                "message" => "Lead ID is required"
+            ]);
+        }
+
+        try {
+            $leadModel = new LeadModel();
+            $existingLead = $leadModel->find($leadId);
+
+            if (!$existingLead) {
+                return $this->response->setJSON([
+                    "status" => "error",
+                    "message" => "Lead not found"
+                ]);
+            }
+
+            // Delete lead record
+            $deleteLead = $leadModel->delete($leadId);
+
+            if ($deleteLead) {
+               
+                $allLeads = $leadModel->findAll();
+
+                return $this->response->setJSON([
+                    "status" => "success",
+                    "message" => "Lead removed successfully",
+                    "data" => $allLeads 
+                ]);
+            } else {
+                return $this->response->setJSON([
+                    "status" => "error",
+                    "message" => "Failed to remove lead"
                 ]);
             }
         } catch (\Throwable $th) {
