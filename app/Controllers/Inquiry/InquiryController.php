@@ -1,13 +1,15 @@
 <?php
 
 namespace App\Controllers\Inquiry;
+
 helper("token");
+
 use App\Models\crm\InquiryModel;
 use CodeIgniter\RESTful\ResourceController;
 
 class InquiryController extends ResourceController
 {
-   
+
     public function addInquiry()
     {
         $InquiryModel = new InquiryModel();
@@ -157,9 +159,11 @@ class InquiryController extends ResourceController
 
             // Check if the delete was successful
             if ($deleteSuccess) {
+                $findAllData = $InquiryModel->findAll();
                 return $this->response->setJSON([
                     "status" => "success",
-                    "message" => "inquiry deleted successfully"
+                    "message" => "inquiry deleted successfully",
+                    "data" => $findAllData
                 ]);
             } else {
                 return $this->response->setJSON([
