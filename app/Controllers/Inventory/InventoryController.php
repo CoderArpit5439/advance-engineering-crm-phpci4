@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Controllers\Inventory;
+
 helper("token");
+
 use App\Models\crm\InventoryModel;
 use CodeIgniter\RESTful\ResourceController;
 
@@ -155,9 +157,11 @@ class InventoryController extends ResourceController
 
             // Check if the delete was successful
             if ($deleteSuccess) {
+              
                 return $this->response->setJSON([
                     "status" => "success",
-                    "message" => "Inventory deleted successfully"
+                    "message" => "Inventory deleted successfully",
+                    
                 ]);
             } else {
                 return $this->response->setJSON([
@@ -177,12 +181,12 @@ class InventoryController extends ResourceController
         $InventoryModel = new InventoryModel();
 
         try {
-            
+
             $page = $this->request->getGet("page") ?? 1;
             $limit = 10;
-            $offset = ($page - 1) * $limit; 
+            $offset = ($page - 1) * $limit;
 
-            
+
             $allInventory = $InventoryModel->orderBy("in_id", "DESC")
                 ->findAll($limit, $offset); // Find records with limit and offset
 

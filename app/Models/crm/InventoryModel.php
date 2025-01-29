@@ -19,7 +19,7 @@ class InventoryModel extends Model
         "in_cat",
         "in_qty",
         "in_rate",
-        
+        "in_value"
     ];
 
     // Dates
