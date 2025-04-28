@@ -60,10 +60,10 @@ $routes->group('crm', function ($routes) {
     });
 
     $routes->group('support', function ($routes) {
-        $routes->post('add-task', 'Support\SupportController::addSupport');
-        $routes->get('fetch-task', 'Support\SupportController::fetchSupport');
-        $routes->post('update-task', 'Support\SupportController::updateSupport');
-        $routes->get('remove-task', 'Support\SupportController::removeSupport');
+        $routes->post('add-support', 'Support\SupportController::addSupport');
+        $routes->get('fetch-support', 'Support\SupportController::fetchSupport');
+        $routes->post('update-support', 'Support\SupportController::updateSupport');
+        $routes->get('remove-support', 'Support\SupportController::removeSupport');
     });
 
     $routes->group('inventory', function ($routes) {

@@ -4,28 +4,19 @@ namespace App\Models\Crm;
 
 use CodeIgniter\Model;
 
-class SupportModel extends Model
+class Media extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'support';
-    protected $primaryKey       = 's_id';
+    protected $table            = 'media';
+    protected $primaryKey       = 'm_id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [
-        "s_order_no",
-        "s_contact",
-        "s_poc",
-        "s_item",
-        "s_due_date",
-        "s_qty",
-        "s_pndg",
-        "s_done",
-        "s_unit",
-        "s_status",
-        "s_total"
+        "m_id","m_product_id","m_image",
     ];
+
     // Dates
     protected $useTimestamps = false;
     protected $dateFormat    = 'datetime';

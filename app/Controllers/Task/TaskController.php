@@ -2,7 +2,7 @@
 
 namespace App\Controllers\Task;
 helper("token");
-use App\Models\Crm\TaskModel;
+use App\Models\crm\TaskModel;
 use CodeIgniter\RESTful\ResourceController;
 
 class TaskController extends ResourceController
