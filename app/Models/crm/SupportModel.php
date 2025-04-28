@@ -26,7 +26,6 @@ class SupportModel extends Model
         "s_status",
         "s_total"
     ];
-
     // Dates
     protected $useTimestamps = false;
     protected $dateFormat    = 'datetime';

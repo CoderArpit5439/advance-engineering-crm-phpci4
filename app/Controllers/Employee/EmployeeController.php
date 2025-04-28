@@ -83,7 +83,7 @@ class EmployeeController extends ResourceController
                 "message" => $th->getMessage()
             ]);
         }
-    } 
+    }
 
     public function GetEmployee(){
         try {
@@ -130,7 +130,7 @@ class EmployeeController extends ResourceController
         if (!$empId) {
             return $this->response->setJSON([
                 "status" => "error",
-                "message" => "Employee ID is required" 
+                "message" => "Employee ID is required"
             ]);
         }
     
@@ -255,8 +255,5 @@ class EmployeeController extends ResourceController
             ]);
         }
     }
-    
-
-    
     
 }
