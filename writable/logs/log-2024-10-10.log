@@ -1,0 +1,85 @@
+ERROR - 2024-10-10 09:42:56 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in F:\crm-web-backend\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 F:\crm-web-backend\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', 'root', '', 'advance_enginee...', 3306, '', 0)
+#1 F:\crm-web-backend\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 F:\crm-web-backend\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 F:\crm-web-backend\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `cu...', Array, false)
+#4 F:\crm-web-backend\system\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#5 F:\crm-web-backend\system\BaseModel.php(788): CodeIgniter\Model->doInsert(Array)
+#6 F:\crm-web-backend\system\Model.php(715): CodeIgniter\BaseModel->insert(Array, true)
+#7 F:\crm-web-backend\app\Controllers\Customers\CustomerController.php(123): CodeIgniter\Model->insert(Array)
+#8 F:\crm-web-backend\system\CodeIgniter.php(919): App\Controllers\Customers\CustomerController->creatCustomer()
+#9 F:\crm-web-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Customers\CustomerController))
+#10 F:\crm-web-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 F:\crm-web-backend\public\index.php(81): CodeIgniter\CodeIgniter->run()
+#12 F:\crm-web-backend\system\Commands\Server\rewrite.php(47): require_once('F:\\crm-web-back...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in F:\crm-web-backend\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 F:\crm-web-backend\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 F:\crm-web-backend\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 F:\crm-web-backend\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `cu...', Array, false)
+#3 F:\crm-web-backend\system\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#4 F:\crm-web-backend\system\BaseModel.php(788): CodeIgniter\Model->doInsert(Array)
+#5 F:\crm-web-backend\system\Model.php(715): CodeIgniter\BaseModel->insert(Array, true)
+#6 F:\crm-web-backend\app\Controllers\Customers\CustomerController.php(123): CodeIgniter\Model->insert(Array)
+#7 F:\crm-web-backend\system\CodeIgniter.php(919): App\Controllers\Customers\CustomerController->creatCustomer()
+#8 F:\crm-web-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Customers\CustomerController))
+#9 F:\crm-web-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 F:\crm-web-backend\public\index.php(81): CodeIgniter\CodeIgniter->run()
+#11 F:\crm-web-backend\system\Commands\Server\rewrite.php(47): require_once('F:\\crm-web-back...')
+#12 {main}
+ERROR - 2024-10-10 09:43:48 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in F:\crm-web-backend\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 F:\crm-web-backend\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', 'root', '', 'advance_enginee...', 3306, '', 0)
+#1 F:\crm-web-backend\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 F:\crm-web-backend\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 F:\crm-web-backend\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `cu...', Array, false)
+#4 F:\crm-web-backend\system\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#5 F:\crm-web-backend\system\BaseModel.php(788): CodeIgniter\Model->doInsert(Array)
+#6 F:\crm-web-backend\system\Model.php(715): CodeIgniter\BaseModel->insert(Array, true)
+#7 F:\crm-web-backend\app\Controllers\Customers\CustomerController.php(123): CodeIgniter\Model->insert(Array)
+#8 F:\crm-web-backend\system\CodeIgniter.php(919): App\Controllers\Customers\CustomerController->creatCustomer()
+#9 F:\crm-web-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Customers\CustomerController))
+#10 F:\crm-web-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 F:\crm-web-backend\public\index.php(81): CodeIgniter\CodeIgniter->run()
+#12 F:\crm-web-backend\system\Commands\Server\rewrite.php(47): require_once('F:\\crm-web-back...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in F:\crm-web-backend\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 F:\crm-web-backend\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 F:\crm-web-backend\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 F:\crm-web-backend\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `cu...', Array, false)
+#3 F:\crm-web-backend\system\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#4 F:\crm-web-backend\system\BaseModel.php(788): CodeIgniter\Model->doInsert(Array)
+#5 F:\crm-web-backend\system\Model.php(715): CodeIgniter\BaseModel->insert(Array, true)
+#6 F:\crm-web-backend\app\Controllers\Customers\CustomerController.php(123): CodeIgniter\Model->insert(Array)
+#7 F:\crm-web-backend\system\CodeIgniter.php(919): App\Controllers\Customers\CustomerController->creatCustomer()
+#8 F:\crm-web-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Customers\CustomerController))
+#9 F:\crm-web-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 F:\crm-web-backend\public\index.php(81): CodeIgniter\CodeIgniter->run()
+#11 F:\crm-web-backend\system\Commands\Server\rewrite.php(47): require_once('F:\\crm-web-back...')
+#12 {main}
+CRITICAL - 2024-10-10 10:13:35 --> Call to undefined function App\Controllers\Authentication\encode_jwt()
+in APPPATH\Controllers\Authentication\LoginController.php on line 32.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication\LoginController->login()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication\LoginController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(81): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\crm-web-backend\\public\\index.php')
+CRITICAL - 2024-10-10 10:14:10 --> Call to undefined function App\Controllers\Authentication\encode_jwt()
+in APPPATH\Controllers\Authentication\LoginController.php on line 32.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication\LoginController->login()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication\LoginController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(81): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\crm-web-backend\\public\\index.php')
+CRITICAL - 2024-10-10 10:14:17 --> Call to undefined function App\Controllers\Authentication\encode_jwt()
+in APPPATH\Controllers\Authentication\LoginController.php on line 32.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication\LoginController->login()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication\LoginController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(81): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\crm-web-backend\\public\\index.php')
