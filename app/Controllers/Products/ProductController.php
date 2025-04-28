@@ -351,10 +351,4 @@ class ProductController extends ResourceController
         }
     }
 
-    // -------------------------------------- ANOTHER FUNCTIONS ------------------------- START ------------> 
-
-
-    
-    // -------------------------------------- ANOTHER FUNCTIONS ------------------------- END   ------------> 
-
 }

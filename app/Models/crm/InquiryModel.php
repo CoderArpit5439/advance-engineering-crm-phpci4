@@ -17,6 +17,8 @@ class InquiryModel extends Model
         "inq_name",
         "inq_contact",
         "inq_message",
+        "inq_email",
+        "inq_status"
     ];
 
     // Dates

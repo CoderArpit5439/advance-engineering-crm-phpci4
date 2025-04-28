@@ -23,8 +23,7 @@ class CategoryController extends ResourceController
             // $allCategory = $categoryModel->findAll();
             $allCategory = $categoryModel->orderBy("cat_id", "DESC")->findAll();
             $countCategory = $categoryModel->countAllResults();
-
-
+            
             if ($allCategory) {
                 return $this->response->setJSON([
                     "status" => "success",
@@ -193,6 +192,7 @@ class CategoryController extends ResourceController
             } catch (\Throwable $th) {
                 return $this->response->setJSON([
                     'status' => 'error',
+                    'a' => $th->getMessage(),
                     'message' => $th->getTrace(),
                     'data' => null
                 ]);
