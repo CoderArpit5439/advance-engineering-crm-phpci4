@@ -36,7 +36,7 @@ class EmployeeController extends ResourceController
             $imageFile->move($uploadPath);
             
             if ($imageFile->hasMoved()) {
-                $fileName = 'https://api.advanceengineerings.com/public/assets/img/uploads/UserImage/' . $imageFile->getName();
+                $fileName = base_url() . '/public/assets/img/uploads/UserImage/' . $imageFile->getName();
             } else {
                 return $this->response->setJSON([
                     'status' => false,
@@ -59,7 +59,8 @@ class EmployeeController extends ResourceController
             "emp_password" => (null !== $empPassword) ? base64_encode($empPassword) : "",
             "emp_role" => $this->request->getVar("emp_role"),
             "emp_image" => $fileName ?? "",
-            "allow_page" => $this->request->getVar("allow_page") ?? []
+            "allow_page" => $this->request->getVar("allow_page") ?? [],
+            "emp_status" => 1
         ];
     
         try {

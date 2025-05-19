@@ -1,0 +1,71 @@
+CRITICAL - 2025-05-03 05:56:37 --> The namespace delimiter is a backslash (\), not a slash (/). Route handler: "\App\Controllers\LoginActivity/LoginActivityController::individualLoginActivities"
+in SYSTEMPATH\Router\Router.php on line 477.
+ 1 SYSTEMPATH\Router\Router.php(477): CodeIgniter\Router\Exceptions\RouterException::forInvalidControllerName('\\App\\Controllers\\LoginActivity/LoginActivityController::individualLoginActivities')
+ 2 SYSTEMPATH\Router\Router.php(184): CodeIgniter\Router\Router->checkRoutes('crm/login-activities/individuals-login-activities')
+ 3 SYSTEMPATH\CodeIgniter.php(800): CodeIgniter\Router\Router->handle('crm/login-activities/individuals-login-activities')
+ 4 SYSTEMPATH\CodeIgniter.php(442): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(76): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance-engineer\\advance-engineer-backend\\public\\index.php')
+CRITICAL - 2025-05-03 05:56:40 --> The namespace delimiter is a backslash (\), not a slash (/). Route handler: "\App\Controllers\LoginActivity/LoginActivityController::individualLoginActivities"
+in SYSTEMPATH\Router\Router.php on line 477.
+ 1 SYSTEMPATH\Router\Router.php(477): CodeIgniter\Router\Exceptions\RouterException::forInvalidControllerName('\\App\\Controllers\\LoginActivity/LoginActivityController::individualLoginActivities')
+ 2 SYSTEMPATH\Router\Router.php(184): CodeIgniter\Router\Router->checkRoutes('crm/login-activities/individuals-login-activities')
+ 3 SYSTEMPATH\CodeIgniter.php(800): CodeIgniter\Router\Router->handle('crm/login-activities/individuals-login-activities')
+ 4 SYSTEMPATH\CodeIgniter.php(442): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(76): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance-engineer\\advance-engineer-backend\\public\\index.php')
+CRITICAL - 2025-05-03 05:56:40 --> The namespace delimiter is a backslash (\), not a slash (/). Route handler: "\App\Controllers\LoginActivity/LoginActivityController::individualLoginActivities"
+in SYSTEMPATH\Router\Router.php on line 477.
+ 1 SYSTEMPATH\Router\Router.php(477): CodeIgniter\Router\Exceptions\RouterException::forInvalidControllerName('\\App\\Controllers\\LoginActivity/LoginActivityController::individualLoginActivities')
+ 2 SYSTEMPATH\Router\Router.php(184): CodeIgniter\Router\Router->checkRoutes('crm/login-activities/individuals-login-activities')
+ 3 SYSTEMPATH\CodeIgniter.php(800): CodeIgniter\Router\Router->handle('crm/login-activities/individuals-login-activities')
+ 4 SYSTEMPATH\CodeIgniter.php(442): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(76): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance-engineer\\advance-engineer-backend\\public\\index.php')
+CRITICAL - 2025-05-03 05:57:46 --> Call to undefined function App\Controllers\LoginActivity\check_jwt_authentication()
+in APPPATH\Controllers\LoginActivity\LoginActivityController.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\LoginActivity\LoginActivityController->individualLoginActivities()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginActivity\LoginActivityController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(76): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance-engineer\\advance-engineer-backend\\public\\index.php')
+CRITICAL - 2025-05-03 05:57:46 --> Call to undefined function App\Controllers\LoginActivity\check_jwt_authentication()
+in APPPATH\Controllers\LoginActivity\LoginActivityController.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\LoginActivity\LoginActivityController->individualLoginActivities()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginActivity\LoginActivityController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(76): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance-engineer\\advance-engineer-backend\\public\\index.php')
+CRITICAL - 2025-05-03 05:58:22 --> Cannot use object of type stdClass as array
+in APPPATH\Controllers\LoginActivity\LoginActivityController.php on line 29.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\LoginActivity\LoginActivityController->individualLoginActivities()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginActivity\LoginActivityController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(76): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance-engineer\\advance-engineer-backend\\public\\index.php')
+CRITICAL - 2025-05-03 05:58:22 --> Cannot use object of type stdClass as array
+in APPPATH\Controllers\LoginActivity\LoginActivityController.php on line 29.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\LoginActivity\LoginActivityController->individualLoginActivities()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginActivity\LoginActivityController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(76): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance-engineer\\advance-engineer-backend\\public\\index.php')
+CRITICAL - 2025-05-03 06:32:46 --> Undefined array key "emp_name"
+in APPPATH\Controllers\Authentication\LoginController.php on line 89.
+ 1 APPPATH\Controllers\Authentication\LoginController.php(89): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "emp_name"', 'E:\\mine\\advance-engineer\\advance-engineer-backend\\app\\Controllers\\Authentication\\LoginController.php', 89)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication\LoginController->crmLogin()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(76): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance-engineer\\advance-engineer-backend\\public\\index.php')
+CRITICAL - 2025-05-03 06:32:53 --> Undefined array key "emp_name"
+in APPPATH\Controllers\Authentication\LoginController.php on line 89.
+ 1 APPPATH\Controllers\Authentication\LoginController.php(89): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "emp_name"', 'E:\\mine\\advance-engineer\\advance-engineer-backend\\app\\Controllers\\Authentication\\LoginController.php', 89)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication\LoginController->crmLogin()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(76): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance-engineer\\advance-engineer-backend\\public\\index.php')

@@ -20,6 +20,7 @@ $routes->group('crm', function ($routes) {
 
     $routes->group('customer', function ($routes) {
         $routes->get('fetch-customer', 'Customers\CustomerController::fetchCustomer');
+        $routes->get('fetch-single-customer', 'Customers\CustomerController::fetchSingleCustomer');
         $routes->get('fetch-list-customer-name', 'Customers\CustomerController::fetchCustomerNameList');
         $routes->post('add-customer', 'Customers\CustomerController::creatCustomer');
         $routes->post('update-customer', 'Customers\CustomerController::updateCustomer');
@@ -106,9 +107,14 @@ $routes->group('crm', function ($routes) {
         $routes->get('remove-employe', 'Employee\EmployeeController::RemoveEmployee');
     });
 
+    $routes->group('login-activities', function($routes) {
+        $routes->get('individuals-login-activities', 'LoginActivity\LoginActivityController::individualLoginActivities');
+    });
+
     $routes->group('company', function ($routes) {
         $routes->post('add-company', 'Company\CompanyController::AddCompany');
         $routes->get('get-company', 'Company\CompanyController::GetCompany');
+        $routes->get('get-single-company', 'Company\CompanyController::fetchSingleCompany');
         $routes->post('update-company', 'Company\CompanyController::UpdateCompany');
     });
 
@@ -116,7 +122,16 @@ $routes->group('crm', function ($routes) {
         $routes->post('add-plant', 'Plant\PlantController::AddPlant');
         $routes->get('get-plant', 'Plant\PlantController::GetPlant');
         $routes->post('update-plant', 'Plant\PlantController::UpdatePlants');
+        $routes->get('fetch-single-plant', 'Plant\PlantController::fetchSinglePlant');
     });
+
+    $routes->group('unit', function ($routes) {
+        $routes->post('add-unit', 'Unit\UnitController::AddUnit');
+        $routes->get('get-unit', 'Unit\UnitController::GetUnit');
+        $routes->post('update-unit', 'Unit\UnitController::UpdateUnits');
+        $routes->get('fetch-single-unit', 'Unit\UnitController::fetchSingleUnit');
+    });
+
     $routes->group('order', function ($routes) {
         $routes->post('add-order', 'Order\OrderController::createOrder');
         $routes->get('get-order', 'Order\OrderController::fetchOrders');
@@ -135,6 +150,11 @@ $routes->group('crm', function ($routes) {
         // $routes->get('media-list', 'Media\MediaController::getMedia');
         $routes->post('add-media', 'Media\MediaController::addMedia');
     });
+
+    $routes->group('features', function($routes) {
+        $routes->get('all-permitted-features', 'Feature\FeatureController::fetchAllMenusForUsers');
+    });
+
 });
 $routes->get('product', 'Products\ProductController::fetchProduct');
 

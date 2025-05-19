@@ -32,7 +32,6 @@ class PlantModel extends Model
         "p_other_email",
         "p_international_domestic",
         "c_id"
-        
     ];
 
     // Dates

@@ -14,7 +14,22 @@ class EmployeModel extends Model
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [
-        "emp_name","emp_password","emp_role","emp_image","allow_page"
+        "emp_name",
+        "emp_username",
+        "emp_password",
+        "emp_role",
+        "emp_designation",
+        "emp_mobile_number",
+        "emp_personal_email",
+        "emp_official_email",
+        "emp_residential_address",
+        "emp_permanent_address",
+        "emp_pan_number",
+        "emp_aadhar_number",
+        "emp_joining_date",
+        "emp_status",
+        "emp_image",
+        "allow_page"
     ];
 
     // Dates

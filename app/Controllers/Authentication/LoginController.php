@@ -6,6 +6,8 @@ use App\Models\crm\UserModel;
 use App\Models\Customer\CustomerModel;
 use CodeIgniter\RESTful\ResourceController;
 helper('token');
+helper('auth');
+helper('schema');
 class LoginController extends ResourceController
 {
 
@@ -59,43 +61,81 @@ class LoginController extends ResourceController
     {
         $username = $this->request->getPost('username') ?? "";
         $password = $this->request->getPost('password') ?? "";
+        $role = $this->request->getPost('role') ?? "";
+        $activity = $this->request->getPost('activity') ?? json_encode((object)[]);
+
+        $activity = json_decode($activity);
         
         
-        if ($username == '' || $password == '') {
+        if ($username == '' || $password == '' || $role == '') {
             return $this->response->setJSON([
                 "status" => false,
-                "message" => "Enter username number or password",
+                "message" => "All fields are required",
                 "data" => (object) [],
             ]);
         }
         
-        $userModel = new UserModel();
-        
-        try {
-            $user = $userModel->where(['user_name' => $username, 'user_pass' => hash('sha256', $password)])->first();
-        
-            if ($user) {
-    
-                $jwt = encode_jwt($user);
-    
+        if($role == 'employee') {
+
+            $user = employee_login($username, $password);
+
+            if($user) {
+
+                $recordLogin = login_time_record("employee", $user['emp_id'], $activity->user_ip_address, $activity->user_agent, 'working', $activity->user_lat_long);
+
+
                 return $this->response->setJSON([
                     "status" => true,
-                    "message" => "Welcome " . $user['user_name'] . '!',
-                    "token" => $jwt,
+                    "message" => "Welcome " . $user['emp_first_name'] . '! - ',
+                    "login_by" => "employee",
+                    "record" => $recordLogin,
+                    "activity" => $activity,
+                    "employee" => employee_without_password($user),
+                    "token" => $user['token'],
                 ]);
-            } else {
+            }else{
                 return $this->response->setJSON([
                     "status" => false,
-                    "message" => "Invalid username or password",
+                    "message" => "Employee login failed",
+                    "token" => null
                 ]);
             }
-        } catch (\Throwable $th) {
-            return $this->response->setJSON([
-                'status' => false,
-                'message' => $th->getMessage() . " " . $th->getLine(),
-                'data' => null
-            ]);
+
+        }else{
+
+            $userModel = new UserModel();
+
+            try {
+                $user = $userModel->where(['user_name' => $username, 'user_pass' => hash('sha256', $password)])->first();
+            
+                if ($user) {
+        
+                    $jwt = encode_jwt($user);
+
+                    $recordLogin = login_time_record("employee", $user['emp_id'], $_SERVER['REMOTE_ADDR'], $_SERVER['HTTP_USER_AGENT'], 'working');
+        
+                    return $this->response->setJSON([
+                        "status" => true,
+                        "message" => "Welcome " . $user['user_name'] . '! - ' . $role,
+                        "recorded" => $recordLogin,
+                        "token" => $jwt,
+                    ]);
+                } else {
+                    return $this->response->setJSON([
+                        "status" => false,
+                        "message" => "Invalid username or password",
+                    ]);
+                }
+            } catch (\Throwable $th) {
+                return $this->response->setJSON([
+                    'status' => false,
+                    'message' => $th->getMessage() . " " . $th->getLine(),
+                    'data' => null
+                ]);
+            }
         }
+        
+        
        
     }
  

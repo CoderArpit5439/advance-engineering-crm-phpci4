@@ -1,0 +1,770 @@
+ERROR - 2025-05-01 11:02:28 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: YES) in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', 'root', 'It@2024', 'advance_enginee...', 3306, '', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(662): CodeIgniter\Model->doFirst()
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Authentication\LoginController.php(75): CodeIgniter\BaseModel->first()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Authentication\LoginController->crmLogin()
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication\LoginController))
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(73): CodeIgniter\CodeIgniter->run()
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(662): CodeIgniter\Model->doFirst()
+#5 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Authentication\LoginController.php(75): CodeIgniter\BaseModel->first()
+#6 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Authentication\LoginController->crmLogin()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication\LoginController))
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(73): CodeIgniter\CodeIgniter->run()
+#10 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#11 {main}
+ERROR - 2025-05-01 11:04:08 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: YES) in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', 'root', 'It@2024', 'advance_enginee...', 3306, '', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(662): CodeIgniter\Model->doFirst()
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Authentication\LoginController.php(75): CodeIgniter\BaseModel->first()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Authentication\LoginController->crmLogin()
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication\LoginController))
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(73): CodeIgniter\CodeIgniter->run()
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(662): CodeIgniter\Model->doFirst()
+#5 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Authentication\LoginController.php(75): CodeIgniter\BaseModel->first()
+#6 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Authentication\LoginController->crmLogin()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication\LoginController))
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(73): CodeIgniter\CodeIgniter->run()
+#10 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#11 {main}
+ERROR - 2025-05-01 11:09:24 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: YES) in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', 'root', 'It@2024', 'advance_enginee...', 3306, '', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(662): CodeIgniter\Model->doFirst()
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Authentication\LoginController.php(75): CodeIgniter\BaseModel->first()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Authentication\LoginController->crmLogin()
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication\LoginController))
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(75): CodeIgniter\CodeIgniter->run()
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(662): CodeIgniter\Model->doFirst()
+#5 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Authentication\LoginController.php(75): CodeIgniter\BaseModel->first()
+#6 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Authentication\LoginController->crmLogin()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication\LoginController))
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(75): CodeIgniter\CodeIgniter->run()
+#10 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#11 {main}
+ERROR - 2025-05-01 11:09:25 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: YES) in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', 'root', 'It@2024', 'advance_enginee...', 3306, '', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(662): CodeIgniter\Model->doFirst()
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Authentication\LoginController.php(75): CodeIgniter\BaseModel->first()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Authentication\LoginController->crmLogin()
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication\LoginController))
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(75): CodeIgniter\CodeIgniter->run()
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(662): CodeIgniter\Model->doFirst()
+#5 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Authentication\LoginController.php(75): CodeIgniter\BaseModel->first()
+#6 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Authentication\LoginController->crmLogin()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication\LoginController))
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(75): CodeIgniter\CodeIgniter->run()
+#10 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#11 {main}
+ERROR - 2025-05-01 12:25:03 --> mysqli_sql_exception: Table 'advance_engineer.company' doesn't exist in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Company\CompanyController.php(101): CodeIgniter\BaseModel->findAll()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Company\CompanyController->GetCompany()
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Company\CompanyController))
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#12 {main}
+ERROR - 2025-05-01 12:25:03 --> mysqli_sql_exception: Table 'advance_engineer.company' doesn't exist in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Company\CompanyController.php(101): CodeIgniter\BaseModel->findAll()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Company\CompanyController->GetCompany()
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Company\CompanyController))
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#12 {main}
+ERROR - 2025-05-01 12:25:06 --> mysqli_sql_exception: Table 'advance_engineer.plant' doesn't exist in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Plant\PlantController.php(91): CodeIgniter\BaseModel->findAll()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Plant\PlantController->GetPlant()
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Plant\PlantController))
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#12 {main}
+ERROR - 2025-05-01 12:25:06 --> mysqli_sql_exception: Table 'advance_engineer.plant' doesn't exist in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Plant\PlantController.php(91): CodeIgniter\BaseModel->findAll()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Plant\PlantController->GetPlant()
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Plant\PlantController))
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#12 {main}
+ERROR - 2025-05-01 12:25:10 --> mysqli_sql_exception: Table 'advance_engineer.company' doesn't exist in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Company\CompanyController.php(101): CodeIgniter\BaseModel->findAll()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Company\CompanyController->GetCompany()
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Company\CompanyController))
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#12 {main}
+ERROR - 2025-05-01 12:25:10 --> mysqli_sql_exception: Table 'advance_engineer.company' doesn't exist in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Company\CompanyController.php(101): CodeIgniter\BaseModel->findAll()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Company\CompanyController->GetCompany()
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Company\CompanyController))
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#12 {main}
+ERROR - 2025-05-01 12:25:12 --> mysqli_sql_exception: Table 'advance_engineer.plant' doesn't exist in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Plant\PlantController.php(91): CodeIgniter\BaseModel->findAll()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Plant\PlantController->GetPlant()
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Plant\PlantController))
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#12 {main}
+ERROR - 2025-05-01 12:25:12 --> mysqli_sql_exception: Table 'advance_engineer.plant' doesn't exist in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Plant\PlantController.php(91): CodeIgniter\BaseModel->findAll()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Plant\PlantController->GetPlant()
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Plant\PlantController))
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#12 {main}
+ERROR - 2025-05-01 12:25:13 --> mysqli_sql_exception: Table 'advance_engineer.company' doesn't exist in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Company\CompanyController.php(101): CodeIgniter\BaseModel->findAll()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Company\CompanyController->GetCompany()
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Company\CompanyController))
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#12 {main}
+ERROR - 2025-05-01 12:25:13 --> mysqli_sql_exception: Table 'advance_engineer.company' doesn't exist in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Company\CompanyController.php(101): CodeIgniter\BaseModel->findAll()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Company\CompanyController->GetCompany()
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Company\CompanyController))
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#12 {main}
+ERROR - 2025-05-01 12:25:28 --> mysqli_sql_exception: Table 'advance_engineer.company' doesn't exist in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Company\CompanyController.php(101): CodeIgniter\BaseModel->findAll()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Company\CompanyController->GetCompany()
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Company\CompanyController))
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#12 {main}
+ERROR - 2025-05-01 12:25:28 --> mysqli_sql_exception: Table 'advance_engineer.company' doesn't exist in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Company\CompanyController.php(101): CodeIgniter\BaseModel->findAll()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Company\CompanyController->GetCompany()
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Company\CompanyController))
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#12 {main}
+ERROR - 2025-05-01 12:25:34 --> mysqli_sql_exception: Table 'advance_engineer.plant' doesn't exist in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Plant\PlantController.php(91): CodeIgniter\BaseModel->findAll()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Plant\PlantController->GetPlant()
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Plant\PlantController))
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#12 {main}
+ERROR - 2025-05-01 12:25:34 --> mysqli_sql_exception: Table 'advance_engineer.plant' doesn't exist in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Plant\PlantController.php(91): CodeIgniter\BaseModel->findAll()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Plant\PlantController->GetPlant()
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Plant\PlantController))
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#12 {main}
+ERROR - 2025-05-01 12:25:35 --> mysqli_sql_exception: Table 'advance_engineer.company' doesn't exist in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Company\CompanyController.php(101): CodeIgniter\BaseModel->findAll()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Company\CompanyController->GetCompany()
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Company\CompanyController))
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#12 {main}
+ERROR - 2025-05-01 12:25:35 --> mysqli_sql_exception: Table 'advance_engineer.company' doesn't exist in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Company\CompanyController.php(101): CodeIgniter\BaseModel->findAll()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Company\CompanyController->GetCompany()
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Company\CompanyController))
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#12 {main}
+ERROR - 2025-05-01 12:25:41 --> mysqli_sql_exception: Table 'advance_engineer.ordersummery' doesn't exist in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Order\OrderController.php(16): CodeIgniter\BaseModel->findAll()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Order\OrderController->fetchOrders()
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Order\OrderController))
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#12 {main}
+ERROR - 2025-05-01 12:25:41 --> mysqli_sql_exception: Table 'advance_engineer.ordersummery' doesn't exist in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Order\OrderController.php(16): CodeIgniter\BaseModel->findAll()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Order\OrderController->fetchOrders()
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Order\OrderController))
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#12 {main}
+ERROR - 2025-05-01 12:27:21 --> mysqli_sql_exception: Table 'advance_engineer.ordersummery' doesn't exist in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Order\OrderController.php(16): CodeIgniter\BaseModel->findAll()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Order\OrderController->fetchOrders()
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Order\OrderController))
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#12 {main}
+ERROR - 2025-05-01 12:27:21 --> mysqli_sql_exception: Table 'advance_engineer.ordersummery' doesn't exist in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Order\OrderController.php(16): CodeIgniter\BaseModel->findAll()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Order\OrderController->fetchOrders()
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Order\OrderController))
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#12 {main}
+ERROR - 2025-05-01 12:29:07 --> mysqli_sql_exception: Table 'advance_engineer.company' doesn't exist in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Company\CompanyController.php(101): CodeIgniter\BaseModel->findAll()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Company\CompanyController->GetCompany()
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Company\CompanyController))
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#12 {main}
+ERROR - 2025-05-01 12:29:07 --> mysqli_sql_exception: Table 'advance_engineer.company' doesn't exist in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Company\CompanyController.php(101): CodeIgniter\BaseModel->findAll()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Company\CompanyController->GetCompany()
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Company\CompanyController))
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#12 {main}
+ERROR - 2025-05-01 12:29:09 --> mysqli_sql_exception: Table 'advance_engineer.plant' doesn't exist in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Plant\PlantController.php(91): CodeIgniter\BaseModel->findAll()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Plant\PlantController->GetPlant()
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Plant\PlantController))
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#12 {main}
+ERROR - 2025-05-01 12:29:09 --> mysqli_sql_exception: Table 'advance_engineer.plant' doesn't exist in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Plant\PlantController.php(91): CodeIgniter\BaseModel->findAll()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Plant\PlantController->GetPlant()
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Plant\PlantController))
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#12 {main}
+ERROR - 2025-05-01 13:20:49 --> mysqli_sql_exception: Table 'advance_engineer.company' doesn't exist in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Company\CompanyController.php(101): CodeIgniter\BaseModel->findAll()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Company\CompanyController->GetCompany()
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Company\CompanyController))
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#12 {main}
+ERROR - 2025-05-01 13:20:49 --> mysqli_sql_exception: Table 'advance_engineer.company' doesn't exist in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Company\CompanyController.php(101): CodeIgniter\BaseModel->findAll()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Company\CompanyController->GetCompany()
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Company\CompanyController))
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#12 {main}
+ERROR - 2025-05-01 13:22:18 --> mysqli_sql_exception: Table 'advance_engineer.company' doesn't exist in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Company\CompanyController.php(101): CodeIgniter\BaseModel->findAll()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Company\CompanyController->GetCompany()
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Company\CompanyController))
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#12 {main}
+ERROR - 2025-05-01 13:22:18 --> mysqli_sql_exception: Table 'advance_engineer.company' doesn't exist in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Company\CompanyController.php(101): CodeIgniter\BaseModel->findAll()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Company\CompanyController->GetCompany()
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Company\CompanyController))
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#12 {main}
+ERROR - 2025-05-01 13:22:18 --> mysqli_sql_exception: Table 'advance_engineer.company' doesn't exist in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `Co...', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `Co...')
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `Co...')
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `Co...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(788): CodeIgniter\Model->doInsert(Array)
+#6 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(715): CodeIgniter\BaseModel->insert(Array, true)
+#7 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Company\CompanyController.php(74): CodeIgniter\Model->insert(Array)
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Company\CompanyController->AddCompany()
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Company\CompanyController))
+#10 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#12 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#13 {main}
+ERROR - 2025-05-01 13:22:26 --> mysqli_sql_exception: Table 'advance_engineer.company' doesn't exist in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Company\CompanyController.php(101): CodeIgniter\BaseModel->findAll()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Company\CompanyController->GetCompany()
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Company\CompanyController))
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#12 {main}
+ERROR - 2025-05-01 13:22:26 --> mysqli_sql_exception: Table 'advance_engineer.company' doesn't exist in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Company\CompanyController.php(101): CodeIgniter\BaseModel->findAll()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Company\CompanyController->GetCompany()
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Company\CompanyController))
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#12 {main}
+ERROR - 2025-05-01 13:22:32 --> mysqli_sql_exception: Table 'advance_engineer.company' doesn't exist in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Company\CompanyController.php(101): CodeIgniter\BaseModel->findAll()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Company\CompanyController->GetCompany()
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Company\CompanyController))
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#12 {main}
+ERROR - 2025-05-01 13:22:32 --> mysqli_sql_exception: Table 'advance_engineer.company' doesn't exist in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Company\CompanyController.php(101): CodeIgniter\BaseModel->findAll()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Company\CompanyController->GetCompany()
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Company\CompanyController))
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#12 {main}
+ERROR - 2025-05-01 13:54:49 --> mysqli_sql_exception: Table 'advance_engineer.company' doesn't exist in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Company\CompanyController.php(101): CodeIgniter\BaseModel->findAll()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Company\CompanyController->GetCompany()
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Company\CompanyController))
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#12 {main}
+ERROR - 2025-05-01 13:54:49 --> mysqli_sql_exception: Table 'advance_engineer.company' doesn't exist in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Company\CompanyController.php(101): CodeIgniter\BaseModel->findAll()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Company\CompanyController->GetCompany()
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Company\CompanyController))
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#12 {main}
+ERROR - 2025-05-01 13:55:48 --> mysqli_sql_exception: Table 'advance_engineer.company' doesn't exist in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Company\CompanyController.php(101): CodeIgniter\BaseModel->findAll()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Company\CompanyController->GetCompany()
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Company\CompanyController))
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#12 {main}
+ERROR - 2025-05-01 13:55:48 --> mysqli_sql_exception: Table 'advance_engineer.company' doesn't exist in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Company\CompanyController.php(101): CodeIgniter\BaseModel->findAll()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Company\CompanyController->GetCompany()
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Company\CompanyController))
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#12 {main}
+ERROR - 2025-05-01 13:55:48 --> mysqli_sql_exception: Table 'advance_engineer.company' doesn't exist in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `Co...', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `Co...')
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `Co...')
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `Co...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(788): CodeIgniter\Model->doInsert(Array)
+#6 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(715): CodeIgniter\BaseModel->insert(Array, true)
+#7 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Company\CompanyController.php(74): CodeIgniter\Model->insert(Array)
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Company\CompanyController->AddCompany()
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Company\CompanyController))
+#10 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#12 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#13 {main}
+ERROR - 2025-05-01 13:55:59 --> mysqli_sql_exception: Table 'advance_engineer.company' doesn't exist in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Company\CompanyController.php(101): CodeIgniter\BaseModel->findAll()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Company\CompanyController->GetCompany()
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Company\CompanyController))
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#12 {main}
+ERROR - 2025-05-01 13:55:59 --> mysqli_sql_exception: Table 'advance_engineer.company' doesn't exist in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Company\CompanyController.php(101): CodeIgniter\BaseModel->findAll()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Company\CompanyController->GetCompany()
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Company\CompanyController))
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#12 {main}
+ERROR - 2025-05-01 13:58:02 --> mysqli_sql_exception: Table 'advance_engineer.company' doesn't exist in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `Co...', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `Co...')
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `Co...')
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `Co...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(788): CodeIgniter\Model->doInsert(Array)
+#6 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(715): CodeIgniter\BaseModel->insert(Array, true)
+#7 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Company\CompanyController.php(74): CodeIgniter\Model->insert(Array)
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Company\CompanyController->AddCompany()
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Company\CompanyController))
+#10 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#12 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#13 {main}
+ERROR - 2025-05-01 14:01:08 --> mysqli_sql_exception: Table 'advance_engineer.company' doesn't exist in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `Co...', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `Co...')
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `Co...')
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `Co...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(788): CodeIgniter\Model->doInsert(Array)
+#6 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(715): CodeIgniter\BaseModel->insert(Array, true)
+#7 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Company\CompanyController.php(74): CodeIgniter\Model->insert(Array)
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Company\CompanyController->AddCompany()
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Company\CompanyController))
+#10 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#12 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#13 {main}
+ERROR - 2025-05-01 14:04:01 --> mysqli_sql_exception: Table 'advance_engineer.company' doesn't exist in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `Co...', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `Co...')
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `Co...')
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `Co...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(788): CodeIgniter\Model->doInsert(Array)
+#6 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(715): CodeIgniter\BaseModel->insert(Array, true)
+#7 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Company\CompanyController.php(74): CodeIgniter\Model->insert(Array)
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Company\CompanyController->AddCompany()
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Company\CompanyController))
+#10 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#12 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#13 {main}

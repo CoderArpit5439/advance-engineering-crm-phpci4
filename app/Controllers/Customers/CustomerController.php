@@ -1,56 +1,56 @@
 <?php
-
 namespace App\Controllers\Customers;
 
-use App\Controllers\BaseController;
+use App\Models\Crm\CompanyModel;
 use App\Models\crm\InquiryModel;
+use App\Models\Crm\PlantModel;
+use App\Models\Crm\UnitModel;
 use App\Models\Customer\CartModel;
 use App\Models\Customer\CustomerModel;
 use App\Models\Product\ProductModel;
 use CodeIgniter\RESTful\ResourceController;
+
 helper("token");
 class CustomerController extends ResourceController
 {
     public function fetchCustomer()
     {
         $customerModel = new CustomerModel();
-    
+
         try {
             $search = $this->request->getGet("search") ?? "";
-    
-           
+
             $allCustomer = $customerModel->orderBy("c_id", "DESC")
                 ->like("c_fullname", $search)
                 ->orLike("c_company_name", $search)
                 ->findAll();
-    
+
             $countCustomer = $customerModel->like("c_fullname", $search)
                 ->orLike("c_company_name", $search)
                 ->countAllResults();
-    
+
             if ($allCustomer) {
                 return $this->response->setJSON([
-                    "status" => "success",
+                    "status"  => "success",
                     "message" => count($allCustomer) . ' Customer(s) found',
-                    "data" => $allCustomer,
-                    "count" => $countCustomer
+                    "data"    => $allCustomer,
+                    "count"   => $countCustomer,
                 ]);
             } else {
                 return $this->response->setJSON([
-                    'status' => 'error',
-                    'data' => null,
+                    'status'  => 'error',
+                    'data'    => null,
                     'message' => 'Customer not found',
                 ]);
             }
         } catch (\Throwable $th) {
             return $this->response->setJSON([
-                'status' => 'error',
+                'status'  => 'error',
                 'message' => $th->getTrace(),
-                'data' => null
+                'data'    => null,
             ]);
         }
     }
-    
 
     public function fetchCustomerNameList()
     {
@@ -61,53 +61,116 @@ class CustomerController extends ResourceController
             $allCustomer = $customerModel->findAll();
 
             foreach ($allCustomer as $customer) {
-                $obj = [];
+                $obj               = [];
                 $obj['c_fullname'] = $customer['c_fullname'];
-                $obj['c_id'] = $customer['c_id'];
-                $customerArr[] = $obj;
+                $obj['c_id']       = $customer['c_id'];
+                $customerArr[]     = $obj;
             }
 
             if ($allCustomer) {
                 return $this->response->setJSON([
-                    "status" => "success",
+                    "status"  => "success",
                     "message" => count($allCustomer) . ' Customer found',
-                    "data" => $customerArr,
+                    "data"    => $customerArr,
                 ]);
             } else {
                 return $this->response->setJSON([
-                    'status' => 'error',
-                    'data' => null,
+                    'status'  => 'error',
+                    'data'    => null,
                     'message' => 'Customer not found',
                 ]);
             }
         } catch (\Throwable $th) {
             return $this->response->setJSON([
-                'status' => 'error',
+                'status'  => 'error',
                 'message' => $th->getTrace(),
-                'data' => null
+                'data'    => null,
             ]);
         }
+    }
+
+    public function fetchSingleCustomer()
+    {
+        $isToken = check_jwt_authentication();
+        if (! $isToken) {
+            return $this->response->setJSON([
+                "message" => "Authentication failed",
+                "status"  => "error",
+            ]);
+        }
+
+        try {
+            $customer_id   = $this->request->getVar('id');
+            $companyModel  = new CompanyModel();
+            $plantModel    = new PlantModel();
+            $unitModel     = new UnitModel();
+            $customerModel = new CustomerModel();
+            // $quotationModel = new QuotationModel();
+            $singleCustomer = $customerModel->where('c_id', $customer_id)->first();
+
+            if ($singleCustomer) {
+
+                $unitDetail = $unitModel->where('u_id', $singleCustomer['c_unit_id'])->first();
+                if ($unitDetail) {
+                    $singleCustomer['unit_name'] = $unitDetail['u_name'];
+                    $plantDetail = $plantModel->where('p_id', $unitDetail['u_plant_id'])->first();
+                    if ($plantDetail) {
+                        $singleCustomer['plant_name'] = $plantDetail['p_city'];
+                        $companyDetail                = $companyModel->where('c_id', $plantDetail['c_id'])->first();
+                        if ($companyDetail) {
+                            $singleCustomer['company_name'] = $companyDetail['c_name'];
+                        }
+                    }
+                }
+            }
+
+            // $plantList = $plantModel->where('c_id', $company_id)->findAll();
+            // $unitList  = [];
+            // $customerList = [];
+
+            // $all_quotation_of_company =
+
+            if ($singleCustomer) {
+                return $this->response->setJSON([
+                    "status"  => "success",
+                    "message" => 'customer found',
+                    "data"    => $singleCustomer,
+                ]);
+            } else {
+                return $this->response->setJSON([
+                    'status'  => 'error',
+                    'data'    => null,
+                    'message' => 'customer not found',
+                ]);
+            }
+
+        } catch (\Throwable $th) {
+            return $this->response->setJSON([
+                'status'  => 'error',
+                'message' => $th->getTrace(),
+                'data'    => null,
+            ]);
+        }
+
     }
 
     public function CustomerDetail()
     {
         $isToken = check_jwt_authentication();
 
-        if (!$isToken) {
+        if (! $isToken) {
             return $this->response->setJSON([
-                "status" => false,
-                "message" => "Authentication failed"
+                "status"  => false,
+                "message" => "Authentication failed",
             ]);
         } else {
             return $this->response->setJSON([
-                "status" => true,
-                "data" => $isToken,
-                "message" => "Customer details Fetched successfully"
+                "status"  => true,
+                "data"    => $isToken,
+                "message" => "Customer details Fetched successfully",
             ]);
 
         }
-
-
 
     }
 
@@ -119,29 +182,28 @@ class CustomerController extends ResourceController
 
         $imageFile = $this->request->getFile('c_image');
 
-        if (!$imageFile) {
+        if (! $imageFile) {
             return $this->response->setJSON([
-                "status" => "error",
-                "message" => "Please Upload Image"
+                "status"  => "error",
+                "message" => "Please Upload Image",
             ]);
         }
 
-
-        if (isset($imageFile) && !empty($imageFile)) {
+        if (isset($imageFile) && ! empty($imageFile)) {
 
             $uploadPath = FCPATH . 'public/assets/img/uploads/customerImage/';
 
-            if (!is_dir($uploadPath)) {
-                mkdir($uploadPath, 0777, TRUE);
+            if (! is_dir($uploadPath)) {
+                mkdir($uploadPath, 0777, true);
             }
 
-            if (!is_dir($uploadPath) || !is_writable($uploadPath)) {
+            if (! is_dir($uploadPath) || ! is_writable($uploadPath)) {
                 return $this->response->setJSON([
-                    'status' => false,
+                    'status'  => false,
                     'message' => 'Upload directory is not writable',
                 ]);
             }
-            // --------------------------- THIS CODE FOR WHEN UPLOAD SINGLE IMAGE ------------ START ---------------> 
+            // --------------------------- THIS CODE FOR WHEN UPLOAD SINGLE IMAGE ------------ START --------------->
 
             $imageFile->move($uploadPath);
 
@@ -151,12 +213,12 @@ class CustomerController extends ResourceController
                 // $imageFile = $fileName;
             } else {
                 return $this->response->setJSON([
-                    'status' => false,
-                    'message' => 'Failed to upload Profile Image.'
+                    'status'  => false,
+                    'message' => 'Failed to upload Profile Image.',
                 ]);
             }
 
-            // --------------------------- THIS CODE FOR WHEN UPLOAD SINGLE IMAGE ------------ END ---------------> 
+            // --------------------------- THIS CODE FOR WHEN UPLOAD SINGLE IMAGE ------------ END --------------->
 
         }
 
@@ -165,67 +227,66 @@ class CustomerController extends ResourceController
         $c_password = $this->request->getVar("c_password") ?? "Advance123";
 
         $data = [
-            "c_fullname" => $this->request->getVar("c_fullname") ?? "",
-            "c_password" => hash('sha256', $c_password),
-            "c_company_name" => $this->request->getVar("c_company_name") ?? "",
-            "c_email" => $this->request->getVar("c_email") ?? "",
-            "c_mobile" => $this->request->getVar("c_mobile") ?? "",
-            "c_post" => $this->request->getVar("c_post") ?? "",
-            "c_department" => $this->request->getVar("c_department") ?? "",
-            "c_status" => $this->request->getVar("c_status") ?? "",
-            "c_gender" => $this->request->getVar("c_gender") ?? "",
-            "c_description" => $this->request->getVar("c_description") ?? "",
-            "c_dob" => $this->request->getVar("c_dob") ?? "",
-            "c_address" => $this->request->getVar("c_address") ?? "",
-            "c_rank" => $this->request->getVar("c_rank") ?? "",
+            "c_fullname"        => $this->request->getVar("c_fullname") ?? "",
+            "c_password"        => hash('sha256', $c_password),
+            "c_company_name"    => $this->request->getVar("c_company_name") ?? "",
+            "c_email"           => $this->request->getVar("c_email") ?? "",
+            "c_mobile"          => $this->request->getVar("c_mobile") ?? "",
+            "c_post"            => $this->request->getVar("c_post") ?? "",
+            "c_department"      => $this->request->getVar("c_department") ?? "",
+            "c_status"          => $this->request->getVar("c_status") ?? "",
+            "c_gender"          => $this->request->getVar("c_gender") ?? "",
+            "c_description"     => $this->request->getVar("c_description") ?? "",
+            "c_dob"             => $this->request->getVar("c_dob") ?? "",
+            "c_address"         => $this->request->getVar("c_address") ?? "",
+            "c_rank"            => $this->request->getVar("c_rank") ?? "",
             "c_no_of_quotation" => $this->request->getVar("c_no_of_quotation") ?? "",
-            "c_image" => $fileName ?? "",
+            "c_image"           => $fileName ?? "",
         ];
 
         try {
             $customerAdd = $customerModel->insert($data);
             if ($customerAdd) {
                 return $this->response->setJSON([
-                    "status" => "success",
+                    "status"  => "success",
                     "message" => "Customer uploaded successfully",
-                    "data" => $data
+                    "data"    => $data,
                 ]);
             } else {
                 return $this->response->setJSON([
-                    "status" => "error",
-                    "message" => "Customer not uploaded"
+                    "status"  => "error",
+                    "message" => "Customer not uploaded",
                 ]);
             }
         } catch (\Throwable $th) {
             return $this->response->setJSON([
-                "status" => "error",
-                "message" => $th->getMessage()
+                "status"  => "error",
+                "message" => $th->getMessage(),
             ]);
         }
     }
 
     public function updateCustomer()
     {
-     
 
         $customerModel = new CustomerModel();
 
         $c_password = $this->request->getVar("c_password") ?? "Advance123";
 
         $data = [
-            "c_fullname" => $this->request->getVar("c_fullname") ?? "",
-            "c_password" => hash('sha256', $c_password),
-            "c_company_name" => $this->request->getVar("c_company_name") ?? "",
-            "c_email" => $this->request->getVar("c_email") ?? "",
-            "c_mobile" => $this->request->getVar("c_mobile") ?? "",
-            "c_post" => $this->request->getVar("c_post") ?? "",
-            "c_department" => $this->request->getVar("c_department") ?? "",
-            "c_status" => $this->request->getVar("c_status") ?? "",
-            "c_gender" => $this->request->getVar("c_gender") ?? "",
-            "c_description" => $this->request->getVar("c_description") ?? "",
-            "c_dob" => $this->request->getVar("c_dob") ?? "",
-            "c_address" => $this->request->getVar("c_address") ?? "",
-            "c_rank" => $this->request->getVar("c_rank") ?? "",
+            "c_fullname"        => $this->request->getVar("c_fullname") ?? "",
+            "c_password"        => hash('sha256', $c_password),
+            "c_company_name"    => $this->request->getVar("c_company_name") ?? "",
+            "c_email"           => $this->request->getVar("c_email") ?? "",
+            "c_mobile"          => $this->request->getVar("c_mobile") ?? "",
+            "c_post"            => $this->request->getVar("c_post") ?? "",
+            "c_department"      => $this->request->getVar("c_department") ?? "",
+            "c_status"          => $this->request->getVar("c_status") ?? "",
+            "c_gender"          => $this->request->getVar("c_gender") ?? "",
+            "c_description"     => $this->request->getVar("c_description") ?? "",
+            "c_dob"             => $this->request->getVar("c_dob") ?? "",
+            "c_address"         => $this->request->getVar("c_address") ?? "",
+            "c_rank"            => $this->request->getVar("c_rank") ?? "",
             "c_no_of_quotation" => $this->request->getVar("c_no_of_quotation") ?? "",
         ];
 
@@ -237,20 +298,20 @@ class CustomerController extends ResourceController
             $updateCustomer = $customerModel->where("c_id", $customerId)->first();
             if ($updateCustomer) {
                 return $this->response->setJSON([
-                    "status" => "success",
+                    "status"  => "success",
                     "message" => "Customer updated",
-                    "data" => $updateCustomer
+                    "data"    => $updateCustomer,
                 ]);
             } else {
                 return $this->response->setJSON([
-                    "status" => "error",
-                    "message" => "Customer not update"
+                    "status"  => "error",
+                    "message" => "Customer not update",
                 ]);
             }
         } catch (\Throwable $th) {
             return $this->response->setJSON([
-                "status" => "error",
-                "message" => $th->getMessage() . " " . $th->getLine()
+                "status"  => "error",
+                "message" => $th->getMessage() . " " . $th->getLine(),
             ]);
         }
     }
@@ -260,7 +321,7 @@ class CustomerController extends ResourceController
         $inquiryModel = new InquiryModel();
 
         $data = [
-            "inq_name" => $this->request->getVar("inq_name") ?? "",
+            "inq_name"    => $this->request->getVar("inq_name") ?? "",
             "inq_message" => $this->request->getVar("inq_message") ?? "",
             "inq_contact" => $this->request->getVar("inq_contact") ?? "",
         ];
@@ -269,20 +330,20 @@ class CustomerController extends ResourceController
             $inquiryAdd = $inquiryModel->insert($data);
             if ($inquiryAdd) {
                 return $this->response->setJSON([
-                    "status" => true,
+                    "status"  => true,
                     "message" => "Inquiry add successfully",
-                    "data" => $data
+                    "data"    => $data,
                 ]);
             } else {
                 return $this->response->setJSON([
-                    "status" => false,
-                    "message" => "Inquiry not uploaded"
+                    "status"  => false,
+                    "message" => "Inquiry not uploaded",
                 ]);
             }
         } catch (\Throwable $th) {
             return $this->response->setJSON([
-                "status" => false,
-                "message" => $th->getMessage()
+                "status"  => false,
+                "message" => $th->getMessage(),
             ]);
         }
     }
@@ -291,16 +352,15 @@ class CustomerController extends ResourceController
     {
         $isToken = check_jwt_authentication();
 
-        if (!$isToken) {
+        if (! $isToken) {
             return $this->response->setJSON([
-                "status" => false,
-                "message" => "Authentication failed"
+                "status"  => false,
+                "message" => "Authentication failed",
             ]);
         }
 
-       
         $data = [
-            "cart_product_id" => $this->request->getGet("proId") ?? "",
+            "cart_product_id"  => $this->request->getGet("proId") ?? "",
             "cart_customer_id" => $isToken->c_id ?? "",
         ];
 
@@ -310,20 +370,20 @@ class CustomerController extends ResourceController
 
             if ($cartAdd) {
                 return $this->response->setJSON([
-                    "status" => "success",
+                    "status"  => "success",
                     "message" => "Cart add successfully",
-                    "data" => $data
+                    "data"    => $data,
                 ]);
             } else {
                 return $this->response->setJSON([
-                    "status" => "error",
-                    "message" => "Cart not add"
+                    "status"  => "error",
+                    "message" => "Cart not add",
                 ]);
             }
         } catch (\Throwable $th) {
             return $this->response->setJSON([
-                "status" => "error",
-                "message" => $th->getMessage()
+                "status"  => "error",
+                "message" => $th->getMessage(),
             ]);
         }
     }
@@ -331,45 +391,43 @@ class CustomerController extends ResourceController
     {
         $isToken = check_jwt_authentication();
 
-        if (!$isToken) {
+        if (! $isToken) {
             return $this->response->setJSON([
-                "status" => false,
-                "message" => "Authentication failed"
+                "status"  => false,
+                "message" => "Authentication failed",
             ]);
         }
 
-       
         $cart_id = $this->request->getGet("cartId");
 
         $cartModel = new CartModel();
 
         try {
-            if($cart_id){
+            if ($cart_id) {
                 $cartRemove = $cartModel->delete($cart_id);
                 if ($cartRemove) {
                     return $this->response->setJSON([
-                        "status" => "success",
+                        "status"  => "success",
                         "message" => "Cart remove successfully",
                     ]);
                 } else {
                     return $this->response->setJSON([
-                        "status" => "error",
-                        "message" => "Cart not removed"
+                        "status"  => "error",
+                        "message" => "Cart not removed",
                     ]);
                 }
-            }
-            else {
+            } else {
                 return $this->response->setJSON([
-                    "status" => "error",
+                    "status"  => "error",
                     "message" => "Cart id does not exist",
-                    "data" => $cart_id
+                    "data"    => $cart_id,
                 ]);
             }
 
         } catch (\Throwable $th) {
             return $this->response->setJSON([
-                "status" => "error",
-                "message" => $th->getMessage()
+                "status"  => "error",
+                "message" => $th->getMessage(),
             ]);
         }
     }
@@ -378,75 +436,74 @@ class CustomerController extends ResourceController
     {
         $isToken = check_jwt_authentication();
 
-        if (!$isToken) {
+        if (! $isToken) {
             return $this->response->setJSON([
-                "status" => false,
-                "message" => "Authentication failed"
+                "status"  => false,
+                "message" => "Authentication failed",
             ]);
         }
 
-        $cartModel = new CartModel();
+        $cartModel    = new CartModel();
         $productModel = new ProductModel();
         try {
-            $allCart = $cartModel->where("cart_customer_id",$isToken->c_id)->findAll();
+            $allCart = $cartModel->where("cart_customer_id", $isToken->c_id)->findAll();
 
             $newArr = [];
             if ($allCart) {
-                foreach ($allCart as $cart){
-                    $productDetails = $productModel->where("p_id",$cart['cart_product_id'])->first();
-                    if ($productDetails){
+                foreach ($allCart as $cart) {
+                    $productDetails = $productModel->where("p_id", $cart['cart_product_id'])->first();
+                    if ($productDetails) {
                         $cart['product_details'] = $productDetails;
-                        $newArr = $cart;
+                        $newArr                  = $cart;
                     }
                 }
 
                 return $this->response->setJSON([
-                    "status" => "success",
+                    "status"  => "success",
                     "message" => "Cart fetch successfully",
-                    "data" => $newArr
+                    "data"    => $newArr,
                 ]);
             } else {
                 return $this->response->setJSON([
-                    "status" => "error",
-                    "message" => "Cart not fetched"
+                    "status"  => "error",
+                    "message" => "Cart not fetched",
                 ]);
             }
         } catch (\Throwable $th) {
             return $this->response->setJSON([
-                "status" => "error",
-                "message" => $th->getMessage() . $th->getLine()
+                "status"  => "error",
+                "message" => $th->getMessage() . $th->getLine(),
             ]);
         }
     }
-  
+
     public function removeCustomer()
     {
         $isToken = check_jwt_authentication();
-        if (!$isToken) {
+        if (! $isToken) {
             return $this->response->setJSON([
                 "message" => "Authentication failed",
-                "status" => "error"
+                "status"  => "error",
             ]);
         }
 
-        
         $customerId = $this->request->getVar("c_id");
 
-        if (!$customerId) {
+        if (! $customerId) {
             return $this->response->setJSON([
-                "status" => "error",
-                "message" => "Lead ID is required"
+                "status"  => "error",
+                "message" => "Lead ID is required",
             ]);
         }
 
         try {
             $customerModel = new CustomerModel();
-            $existingLead = $customerModel->find($customerId);
+            $existingLead  = $customerModel->find($customerId);
 
-            if (!$existingLead) {
+            if (! $existingLead) {
                 return $this->response->setJSON([
-                    "status" => "error",
-                    "message" => "Lead not found"
+                    "status"  => "error",
+                    "message" => "Lead not found",
                 ]);
             }
 
@@ -458,24 +515,22 @@ class CustomerController extends ResourceController
                 $allCustomer = $customerModel->findAll();
 
                 return $this->response->setJSON([
-                    "status" => "success",
+                    "status"  => "success",
                     "message" => "customer removed successfully",
-                    "data" => $allCustomer
+                    "data"    => $allCustomer,
                 ]);
             } else {
                 return $this->response->setJSON([
-                    "status" => "error",
-                    "message" => "Failed to remove customer"
+                    "status"  => "error",
+                    "message" => "Failed to remove customer",
                 ]);
             }
         } catch (\Throwable $th) {
             return $this->response->setJSON([
-                "status" => "error",
-                "message" => $th->getMessage()
+                "status"  => "error",
+                "message" => $th->getMessage(),
             ]);
         }
     }
-    
-
 
 }

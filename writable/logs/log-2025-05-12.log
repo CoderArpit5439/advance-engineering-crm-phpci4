@@ -1,0 +1,186 @@
+ERROR - 2025-05-12 10:14:18 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', 'root', '', 'advance_enginee...', 3306, '', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(662): CodeIgniter\Model->doFirst()
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Helpers\auth_helper.php(13): CodeIgniter\BaseModel->first()
+#7 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Authentication\LoginController.php(80): employee_login('abhisharma', '123456')
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Authentication\LoginController->crmLogin()
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication\LoginController))
+#10 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#12 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(662): CodeIgniter\Model->doFirst()
+#5 E:\mine\advance-engineer\advance-engineer-backend\app\Helpers\auth_helper.php(13): CodeIgniter\BaseModel->first()
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Authentication\LoginController.php(80): employee_login('abhisharma', '123456')
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Authentication\LoginController->crmLogin()
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication\LoginController))
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#12 {main}
+CRITICAL - 2025-05-12 10:14:18 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `employee`
+WHERE `emp_username` = :emp_username:
+AND `emp_password` = :emp_password:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(662): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Helpers\auth_helper.php(13): CodeIgniter\BaseModel->first()
+ 6 APPPATH\Controllers\Authentication\LoginController.php(80): employee_login('abhisharma', '123456')
+ 7 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication\LoginController->crmLogin()
+ 8 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication\LoginController))
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(76): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance-engineer\\advance-engineer-backend\\public\\index.php')
+ERROR - 2025-05-12 10:14:38 --> Error connecting to the database: ErrorException: mysqli::real_connect(): Error while reading greeting packet. PID=9588 in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'E:\\mine\\advance...', 185)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', 'root', '', 'advance_enginee...', 3306, '', 0)
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+#6 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(662): CodeIgniter\Model->doFirst()
+#7 E:\mine\advance-engineer\advance-engineer-backend\app\Helpers\auth_helper.php(13): CodeIgniter\BaseModel->first()
+#8 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Authentication\LoginController.php(80): employee_login('abhisharma', '123456')
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Authentication\LoginController->crmLogin()
+#10 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication\LoginController))
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#13 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#14 {main}
+
+Next mysqli_sql_exception: MySQL server has gone away in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', 'root', '', 'advance_enginee...', 3306, '', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(662): CodeIgniter\Model->doFirst()
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Helpers\auth_helper.php(13): CodeIgniter\BaseModel->first()
+#7 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Authentication\LoginController.php(80): employee_login('abhisharma', '123456')
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Authentication\LoginController->crmLogin()
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication\LoginController))
+#10 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#12 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: MySQL server has gone away in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(662): CodeIgniter\Model->doFirst()
+#5 E:\mine\advance-engineer\advance-engineer-backend\app\Helpers\auth_helper.php(13): CodeIgniter\BaseModel->first()
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Authentication\LoginController.php(80): employee_login('abhisharma', '123456')
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Authentication\LoginController->crmLogin()
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication\LoginController))
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#12 {main}
+CRITICAL - 2025-05-12 10:14:38 --> Unable to connect to the database.
+Main connection [MySQLi]: MySQL server has gone away
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `employee`
+WHERE `emp_username` = :emp_username:
+AND `emp_password` = :emp_password:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(662): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Helpers\auth_helper.php(13): CodeIgniter\BaseModel->first()
+ 6 APPPATH\Controllers\Authentication\LoginController.php(80): employee_login('abhisharma', '123456')
+ 7 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication\LoginController->crmLogin()
+ 8 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication\LoginController))
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(76): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance-engineer\\advance-engineer-backend\\public\\index.php')
+ERROR - 2025-05-12 10:14:55 --> Error connecting to the database: ErrorException: mysqli::real_connect(): Error while reading greeting packet. PID=9588 in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'E:\\mine\\advance...', 185)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', 'root', '', 'advance_enginee...', 3306, '', 0)
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+#6 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(662): CodeIgniter\Model->doFirst()
+#7 E:\mine\advance-engineer\advance-engineer-backend\app\Helpers\auth_helper.php(13): CodeIgniter\BaseModel->first()
+#8 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Authentication\LoginController.php(80): employee_login('abhisharma', '123456')
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Authentication\LoginController->crmLogin()
+#10 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication\LoginController))
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#13 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#14 {main}
+
+Next mysqli_sql_exception: MySQL server has gone away in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', 'root', '', 'advance_enginee...', 3306, '', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(662): CodeIgniter\Model->doFirst()
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Helpers\auth_helper.php(13): CodeIgniter\BaseModel->first()
+#7 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Authentication\LoginController.php(80): employee_login('abhisharma', '123456')
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Authentication\LoginController->crmLogin()
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication\LoginController))
+#10 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#12 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: MySQL server has gone away in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(662): CodeIgniter\Model->doFirst()
+#5 E:\mine\advance-engineer\advance-engineer-backend\app\Helpers\auth_helper.php(13): CodeIgniter\BaseModel->first()
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Authentication\LoginController.php(80): employee_login('abhisharma', '123456')
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Authentication\LoginController->crmLogin()
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication\LoginController))
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#12 {main}
+CRITICAL - 2025-05-12 10:14:55 --> Unable to connect to the database.
+Main connection [MySQLi]: MySQL server has gone away
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `employee`
+WHERE `emp_username` = :emp_username:
+AND `emp_password` = :emp_password:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(662): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Helpers\auth_helper.php(13): CodeIgniter\BaseModel->first()
+ 6 APPPATH\Controllers\Authentication\LoginController.php(80): employee_login('abhisharma', '123456')
+ 7 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Authentication\LoginController->crmLogin()
+ 8 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentication\LoginController))
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(76): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance-engineer\\advance-engineer-backend\\public\\index.php')

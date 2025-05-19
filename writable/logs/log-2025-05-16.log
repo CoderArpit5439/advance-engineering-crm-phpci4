@@ -1,0 +1,30 @@
+ERROR - 2025-05-16 07:52:46 --> mysqli_sql_exception: Table 'advance_engineer.ordersummery' doesn't exist in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Order\OrderController.php(16): CodeIgniter\BaseModel->findAll()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Order\OrderController->fetchOrders()
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Order\OrderController))
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#12 {main}
+ERROR - 2025-05-16 07:52:46 --> mysqli_sql_exception: Table 'advance_engineer.ordersummery' doesn't exist in E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\mine\advance-engineer\advance-engineer-backend\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\mine\advance-engineer\advance-engineer-backend\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\mine\advance-engineer\advance-engineer-backend\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\mine\advance-engineer\advance-engineer-backend\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\mine\advance-engineer\advance-engineer-backend\app\Controllers\Order\OrderController.php(16): CodeIgniter\BaseModel->findAll()
+#7 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(919): App\Controllers\Order\OrderController->fetchOrders()
+#8 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Order\OrderController))
+#9 E:\mine\advance-engineer\advance-engineer-backend\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\mine\advance-engineer\advance-engineer-backend\public\index.php(76): CodeIgniter\CodeIgniter->run()
+#11 E:\mine\advance-engineer\advance-engineer-backend\system\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance...')
+#12 {main}

@@ -1,0 +1,14 @@
+CRITICAL - 2025-05-05 13:04:33 --> Call to undefined function App\Controllers\Feature\check_jwt_authentication()
+in APPPATH\Controllers\Feature\FeatureController.php on line 35.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Feature\FeatureController->fetchAllMenusForUsers()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Feature\FeatureController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(76): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance-engineer\\advance-engineer-backend\\public\\index.php')
+CRITICAL - 2025-05-05 13:04:34 --> Call to undefined function App\Controllers\Feature\check_jwt_authentication()
+in APPPATH\Controllers\Feature\FeatureController.php on line 35.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Feature\FeatureController->fetchAllMenusForUsers()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Feature\FeatureController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(76): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\mine\\advance-engineer\\advance-engineer-backend\\public\\index.php')
