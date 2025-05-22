@@ -14,21 +14,28 @@ class InquiryModel extends Model
     protected $useSoftDeletes = false;
     protected $protectFields = true;
     protected $allowedFields = [
-        "inq_name",
-        "inq_contact",
-        "inq_message",
-        "inq_email",
-        "inq_status",
-        "p_name",
-        "p_size",
-        "p_moc",
-        "p_thickness",
-        "p_drg",
-        "p_product",
-        "p_code",
-        "p_info",
-         "p_id"
+        
+        // OLD FIELDS MADE BY AAKASH
+        // "inq_name",
+        // "inq_customer_id",
+        // "inq_contact",
+        // "inq_message",
+        // "inq_email",
+        // "inq_status",
 
+        // NEW FIELDS MADE BY ARPIT
+        "inq_company_id",
+        "inq_quotation_id",
+        "inq_item_code",
+        "inq_drg_no",
+        "inq_dimension",
+        "inq_material",
+        "inq_weight",
+        "inq_qty",
+        "inq_price",
+        "inq_customer_id",
+        "inq_description",
+        "inq_status",
     ];
 
     // Dates
